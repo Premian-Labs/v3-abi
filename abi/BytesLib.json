@@ -1,0 +1,12 @@
+[
+  {
+    "inputs": [],
+    "name": "BytesLib__OutOfBounds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BytesLib__Overflow",
+    "type": "error"
+  }
+]

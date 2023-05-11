@@ -1,0 +1,22 @@
+{
+  "name": "@premia/v3-abi",
+  "description": "ABI for Premia v3 contracts",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Premian-Labs/v3-abi.git"
+  },
+  "keywords": [
+    "premia",
+    "v3",
+    "solidity",
+    "abi",
+    "ethereum",
+    "defi",
+    "options",
+    "trading",
+    "and",
+    "market-making"
+  ]
+}
