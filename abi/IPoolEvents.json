@@ -296,6 +296,12 @@
       },
       {
         "indexed": false,
+        "internalType": "UD60x18",
+        "name": "totalReferralRebate",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"
@@ -523,6 +529,12 @@
         "indexed": false,
         "internalType": "UD60x18",
         "name": "currentTick",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "totalReferralRebate",
         "type": "uint256"
       },
       {

@@ -23,6 +23,11 @@
       },
       {
         "internalType": "address",
+        "name": "referral",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "settings",
         "type": "address"
       },
@@ -217,6 +222,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "Pool__AgentNotAuthorized",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "UD60x18",
@@ -230,6 +240,22 @@
       }
     ],
     "name": "Pool__CostExceedsPayout",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "costInWrappedNative",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "authorizedCost",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__CostNotAuthorized",
     "type": "error"
   },
   {
@@ -339,17 +365,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "sender",
-        "type": "address"
-      }
-    ],
-    "name": "Pool__NotAuthorized",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "UD60x18",
         "name": "balance",
         "type": "uint256"
@@ -377,6 +392,17 @@
   {
     "inputs": [],
     "name": "Pool__NotWrappedNativeTokenPool",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "Pool__OperatorNotAuthorized",
     "type": "error"
   },
   {
@@ -505,27 +531,6 @@
       }
     ],
     "name": "Pool__TickWidthInvalid",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "Pool__UnauthorizedAgent",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "costInWrappedNative",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "authorizedCost",
-        "type": "uint256"
-      }
-    ],
-    "name": "Pool__UnauthorizedCost",
     "type": "error"
   },
   {
@@ -955,6 +960,12 @@
       },
       {
         "indexed": false,
+        "internalType": "UD60x18",
+        "name": "totalReferralRebate",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"
@@ -1182,6 +1193,12 @@
         "indexed": false,
         "internalType": "UD60x18",
         "name": "currentTick",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "totalReferralRebate",
         "type": "uint256"
       },
       {
@@ -1541,6 +1558,11 @@
         "internalType": "struct IPoolInternal.Signature",
         "name": "signature",
         "type": "tuple"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "fillQuoteRFQ",
@@ -1815,6 +1837,11 @@
         "internalType": "uint256",
         "name": "premiumLimit",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "trade",
