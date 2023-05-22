@@ -38,6 +38,22 @@
         "type": "uint256"
       }
     ],
+    "name": "ArrayUtils__ArrayCannotExpand",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "arrayLength",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "size",
+        "type": "uint256"
+      }
+    ],
     "name": "OracleAdapter__ArrayCannotExpand",
     "type": "error"
   },
@@ -235,6 +251,22 @@
   {
     "inputs": [],
     "name": "UniswapV3Adapter__PeriodNotSet",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token0",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token1",
+        "type": "address"
+      }
+    ],
+    "name": "UniswapV3Adapter__TokensUnsorted",
     "type": "error"
   },
   {

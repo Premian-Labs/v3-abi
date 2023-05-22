@@ -13,17 +13,22 @@
       },
       {
         "internalType": "address",
-        "name": "oracleAddress",
+        "name": "oracle",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "factoryAddress",
+        "name": "factory",
         "type": "address"
       },
       {
         "internalType": "address",
         "name": "router",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "vxPremia",
         "type": "address"
       }
     ],
@@ -1127,6 +1132,11 @@
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
       }
     ],
     "name": "getQuote",
@@ -1543,6 +1553,11 @@
         "internalType": "uint256",
         "name": "premiumLimit",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "trade",

@@ -283,9 +283,9 @@
   {
     "inputs": [
       {
-        "internalType": "SD59x18[]",
+        "internalType": "SD59x18[5]",
         "name": "arr",
-        "type": "int256[]"
+        "type": "int256[5]"
       },
       {
         "internalType": "SD59x18",
@@ -382,24 +382,24 @@
       {
         "components": [
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "tau",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "theta",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "psi",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "rho",
-            "type": "int256[]"
+            "type": "int256[5]"
           }
         ],
         "internalType": "struct VolatilityOracleStorage.Params",
@@ -515,9 +515,9 @@
     "name": "parseParams",
     "outputs": [
       {
-        "internalType": "int256[]",
+        "internalType": "int256[5]",
         "name": "params",
-        "type": "int256[]"
+        "type": "int256[5]"
       }
     ],
     "stateMutability": "pure",
@@ -532,6 +532,52 @@
       }
     ],
     "name": "removeWhitelistedRelayers",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "setRiskFreeRate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "spot",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "timeToMaturity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "volatility",
+        "type": "uint256"
+      }
+    ],
+    "name": "setVolatility",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

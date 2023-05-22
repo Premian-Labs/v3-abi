@@ -92,7 +92,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "maturity",
         "type": "uint256"
       }
     ],
@@ -122,6 +122,24 @@
   },
   {
     "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "_quoteFromAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "setQuoteFrom",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      },
       {
         "internalType": "UD60x18",
         "name": "_quoteFromAmount",

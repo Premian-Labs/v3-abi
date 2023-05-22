@@ -186,6 +186,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "month",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidMonth",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__InvalidQuoteRFQSignature",
     "type": "error"
@@ -1316,6 +1327,12 @@
         "indexed": true,
         "internalType": "address",
         "name": "longReceiver",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taker",
         "type": "address"
       },
       {
@@ -2894,6 +2911,11 @@
         "internalType": "UD60x18",
         "name": "size",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "writeFrom",

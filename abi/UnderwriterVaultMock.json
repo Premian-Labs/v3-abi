@@ -13,17 +13,22 @@
       },
       {
         "internalType": "address",
-        "name": "oracleAddress",
+        "name": "oracle",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "factoryAddress",
+        "name": "factory",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "routerAddress",
+        "name": "router",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "vxPremia",
         "type": "address"
       }
     ],
@@ -1351,116 +1356,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "strike",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "size",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "availableAssets",
-        "type": "uint256"
-      }
-    ],
-    "name": "ensureSufficientFunds",
-    "outputs": [],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bool",
-        "name": "isCallVault",
-        "type": "bool"
-      },
-      {
-        "internalType": "bool",
-        "name": "isCallOption",
-        "type": "bool"
-      },
-      {
-        "internalType": "bool",
-        "name": "isBuy",
-        "type": "bool"
-      }
-    ],
-    "name": "ensureTradeableWithVault",
-    "outputs": [],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "strike",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "maturity",
-        "type": "uint256"
-      }
-    ],
-    "name": "ensureValidOption",
-    "outputs": [],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "minimum",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "maximum",
-        "type": "uint256"
-      }
-    ],
-    "name": "ensureWithinDTEBounds",
-    "outputs": [],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "value",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "minimum",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "maximum",
-        "type": "uint256"
-      }
-    ],
-    "name": "ensureWithinDeltaBounds",
-    "outputs": [],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "getAvailableAssets",
     "outputs": [
@@ -1954,6 +1849,11 @@
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
       }
     ],
     "name": "getQuote",
@@ -2752,6 +2652,116 @@
     "inputs": [
       {
         "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "size",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "availableAssets",
+        "type": "uint256"
+      }
+    ],
+    "name": "revertIfInsufficientFunds",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "isCallVault",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isCallOption",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isBuy",
+        "type": "bool"
+      }
+    ],
+    "name": "revertIfNotTradeableWithVault",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      }
+    ],
+    "name": "revertIfOptionInvalid",
+    "outputs": [],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "minimum",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "maximum",
+        "type": "uint256"
+      }
+    ],
+    "name": "revertIfOutOfDTEBounds",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "minimum",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "maximum",
+        "type": "uint256"
+      }
+    ],
+    "name": "revertIfOutOfDeltaBounds",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
         "name": "alphaCLevel",
         "type": "uint256"
       }
@@ -3166,6 +3176,11 @@
         "internalType": "uint256",
         "name": "premiumLimit",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "trade",

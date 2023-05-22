@@ -43,6 +43,74 @@
         "type": "address"
       },
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "base",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "quote",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oracleAdapter",
+        "type": "address"
+      }
+    ],
+    "name": "SupportedTokenPairAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "base",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "quote",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oracleAdapter",
+        "type": "address"
+      }
+    ],
+    "name": "SupportedTokenPairRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
         "indexed": false,
         "internalType": "bytes32",
         "name": "vaultType",
@@ -78,10 +146,87 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "vaultType",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultRegistry.TradeSide",
+        "name": "side",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IVaultRegistry.OptionType",
+        "name": "optionType",
+        "type": "uint8"
+      }
+    ],
+    "name": "VaultUpdated",
+    "type": "event"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
         "name": "vault",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "base",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "quote",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oracleAdapter",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.TokenPair[]",
+        "name": "tokenPairs",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "addSupportedTokenPairs",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "asset",
         "type": "address"
       },
       {
@@ -164,6 +309,42 @@
         "type": "address"
       }
     ],
+    "name": "getSupportedTokenPairs",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "base",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "quote",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oracleAdapter",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.TokenPair[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
     "name": "getVault",
     "outputs": [
       {
@@ -171,6 +352,11 @@
           {
             "internalType": "address",
             "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
             "type": "address"
           },
           {
@@ -209,6 +395,11 @@
             "type": "address"
           },
           {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
             "internalType": "bytes32",
             "name": "vaultType",
             "type": "bytes32"
@@ -235,6 +426,57 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getVaultsByAsset",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "vaultType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum IVaultRegistry.TradeSide",
+            "name": "side",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IVaultRegistry.OptionType",
+            "name": "optionType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.Vault[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "assets",
+        "type": "address[]"
+      },
+      {
         "internalType": "enum IVaultRegistry.TradeSide",
         "name": "side",
         "type": "uint8"
@@ -252,6 +494,11 @@
           {
             "internalType": "address",
             "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
             "type": "address"
           },
           {
@@ -296,6 +543,74 @@
             "type": "address"
           },
           {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "vaultType",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum IVaultRegistry.TradeSide",
+            "name": "side",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum IVaultRegistry.OptionType",
+            "name": "optionType",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.Vault[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "base",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "quote",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oracleAdapter",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.TokenPair",
+        "name": "tokenPair",
+        "type": "tuple"
+      }
+    ],
+    "name": "getVaultsByTokenPair",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
             "internalType": "bytes32",
             "name": "vaultType",
             "type": "bytes32"
@@ -334,6 +649,11 @@
           {
             "internalType": "address",
             "name": "vault",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
             "type": "address"
           },
           {
@@ -378,6 +698,11 @@
             "type": "address"
           },
           {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
             "internalType": "bytes32",
             "name": "vaultType",
             "type": "bytes32"
@@ -399,6 +724,60 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
+    "name": "isVault",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "base",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "quote",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "oracleAdapter",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IVaultRegistry.TokenPair[]",
+        "name": "tokenPairsToRemove",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "removeSupportedTokenPairs",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -446,6 +825,39 @@
       }
     ],
     "name": "updateSettings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "vaultType",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "enum IVaultRegistry.TradeSide",
+        "name": "side",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum IVaultRegistry.OptionType",
+        "name": "optionType",
+        "type": "uint8"
+      }
+    ],
+    "name": "updateVault",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

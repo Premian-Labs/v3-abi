@@ -1,10 +1,5 @@
 [
   {
-    "inputs": [],
-    "name": "ChainlinkOraclePriceStub__CallFailed",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint80",

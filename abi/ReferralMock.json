@@ -48,7 +48,7 @@
   },
   {
     "inputs": [],
-    "name": "Referral__NotPool",
+    "name": "Referral__PoolNotAuthorized",
     "type": "error"
   },
   {
@@ -415,13 +415,7 @@
       }
     ],
     "name": "useReferral",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "totalRebate",
-        "type": "uint256"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   }

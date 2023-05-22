@@ -33,6 +33,11 @@
       },
       {
         "internalType": "address",
+        "name": "vaultRegistry",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "vxPremia",
         "type": "address"
       }
@@ -324,6 +329,17 @@
       }
     ],
     "name": "Pool__InvalidBelowPrice",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "month",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidMonth",
     "type": "error"
   },
   {
@@ -1462,6 +1478,12 @@
         "indexed": true,
         "internalType": "address",
         "name": "longReceiver",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "taker",
         "type": "address"
       },
       {

@@ -7,6 +7,17 @@
   {
     "inputs": [
       {
+        "internalType": "int256",
+        "name": "value",
+        "type": "int256"
+      }
+    ],
+    "name": "VolatilityOracle__OutOfBounds",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "sender",
         "type": "address"
@@ -121,24 +132,24 @@
       {
         "components": [
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "tau",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "theta",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "psi",
-            "type": "int256[]"
+            "type": "int256[5]"
           },
           {
-            "internalType": "int256[]",
+            "internalType": "int256[5]",
             "name": "rho",
-            "type": "int256[]"
+            "type": "int256[5]"
           }
         ],
         "internalType": "struct VolatilityOracleStorage.Params",
@@ -254,9 +265,9 @@
     "name": "parseParams",
     "outputs": [
       {
-        "internalType": "int256[]",
+        "internalType": "int256[5]",
         "name": "params",
-        "type": "int256[]"
+        "type": "int256[5]"
       }
     ],
     "stateMutability": "pure",

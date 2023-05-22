@@ -874,6 +874,11 @@
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"
+      },
+      {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
       }
     ],
     "name": "getQuote",
@@ -1290,6 +1295,11 @@
         "internalType": "uint256",
         "name": "premiumLimit",
         "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
       }
     ],
     "name": "trade",

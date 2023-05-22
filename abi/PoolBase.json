@@ -65,6 +65,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "month",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidMonth",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__UseTransferPositionToTransferLPTokens",
     "type": "error"
