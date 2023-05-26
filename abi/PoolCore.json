@@ -1647,54 +1647,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "lower",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "upper",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "liquidityRate",
-        "type": "uint256"
-      }
-    ],
-    "name": "liquidityForRange",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "liquidityNet",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "price",
-        "type": "uint256"
-      }
-    ],
-    "name": "liquidityForTick",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "liquidityNet",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "marketPrice",
     "outputs": [
@@ -1876,69 +1828,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "price",
-        "type": "uint256"
-      }
-    ],
-    "name": "tick",
-    "outputs": [
-      {
-        "components": [
-          {
-            "components": [
-              {
-                "internalType": "SD59x18",
-                "name": "delta",
-                "type": "int256"
-              },
-              {
-                "internalType": "UD60x18",
-                "name": "externalFeeRate",
-                "type": "uint256"
-              },
-              {
-                "internalType": "SD59x18",
-                "name": "longDelta",
-                "type": "int256"
-              },
-              {
-                "internalType": "SD59x18",
-                "name": "shortDelta",
-                "type": "int256"
-              },
-              {
-                "internalType": "uint256",
-                "name": "counter",
-                "type": "uint256"
-              }
-            ],
-            "internalType": "struct IPoolInternal.Tick",
-            "name": "tick",
-            "type": "tuple"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "price",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "liquidityNet",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct IPoolInternal.TickWithLiquidity",
-        "name": "",
-        "type": "tuple"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "ticks",
     "outputs": [
@@ -1983,11 +1872,16 @@
           },
           {
             "internalType": "UD60x18",
-            "name": "liquidityNet",
+            "name": "longRate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "shortRate",
             "type": "uint256"
           }
         ],
-        "internalType": "struct IPoolInternal.TickWithLiquidity[]",
+        "internalType": "struct IPoolInternal.TickWithRates[]",
         "name": "",
         "type": "tuple[]"
       }
