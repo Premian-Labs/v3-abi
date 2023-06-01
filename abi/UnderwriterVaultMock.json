@@ -30,6 +30,11 @@
         "internalType": "address",
         "name": "vxPremia",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "poolDiamond",
+        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -325,6 +330,11 @@
       }
     ],
     "name": "PRBMath_UD60x18_Sqrt_Overflow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuard__ReentrantCall",
     "type": "error"
   },
   {

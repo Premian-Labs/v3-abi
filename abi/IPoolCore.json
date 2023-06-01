@@ -457,6 +457,50 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "size",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "premium",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isPremiumNormalized",
+        "type": "bool"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isCallPool",
+        "type": "bool"
+      }
+    ],
+    "name": "_takerFeeLowLevel",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "UD60x18",
         "name": "size",
         "type": "uint256"
@@ -629,6 +673,19 @@
         "internalType": "bool",
         "name": "isCallPool",
         "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSettlementPrice",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
