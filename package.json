@@ -1,7 +1,7 @@
 {
   "name": "@premia/v3-abi",
   "description": "ABI for Premia v3 contracts",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "repository": {
     "type": "git",

@@ -2111,6 +2111,24 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getStrandedArea",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "lower",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "upper",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
