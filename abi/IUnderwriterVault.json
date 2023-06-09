@@ -324,7 +324,7 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "uint256",
         "name": "feesClaimed",
         "type": "uint256"
       }

@@ -1555,6 +1555,52 @@
   {
     "inputs": [
       {
+        "internalType": "UD60x18",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "name": "exposed_getTick",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "SD59x18",
+            "name": "delta",
+            "type": "int256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "externalFeeRate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "SD59x18",
+            "name": "longDelta",
+            "type": "int256"
+          },
+          {
+            "internalType": "SD59x18",
+            "name": "shortDelta",
+            "type": "int256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "counter",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IPoolInternal.Tick",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "components": [
           {
             "internalType": "address",
@@ -1617,6 +1663,29 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "exposed_mint",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "operator",
         "type": "address"
       },
@@ -1663,6 +1732,32 @@
   {
     "inputs": [],
     "name": "getLiquidityRate",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getLongRate",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getShortRate",
     "outputs": [
       {
         "internalType": "UD60x18",

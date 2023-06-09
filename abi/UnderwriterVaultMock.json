@@ -592,7 +592,7 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "uint256",
         "name": "feesClaimed",
         "type": "uint256"
       }
@@ -954,6 +954,11 @@
         "internalType": "UD60x18",
         "name": "spread",
         "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "premium",
+        "type": "uint256"
       }
     ],
     "name": "afterBuy",
@@ -1081,29 +1086,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "to",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "beforeTokenTransfer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "receiver",
         "type": "address"
       },
@@ -1119,6 +1101,13 @@
       }
     ],
     "name": "beforeWithdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "chargeManagementFees",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1179,6 +1168,19 @@
       }
     ],
     "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "computeManagementFees",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1381,25 +1383,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "name": "getAveragePricePerShare",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "UD60x18",
         "name": "spot",
         "type": "uint256"
@@ -1514,69 +1497,16 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "shares",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "pps",
-        "type": "uint256"
-      }
-    ],
-    "name": "getFeeInternal",
+    "inputs": [],
+    "name": "getLastManagementFeeTimestamp",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "UD60x18",
-            "name": "assets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "balanceShares",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "performance",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "performanceFeeInAssets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "managementFeeInAssets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "totalFeeInShares",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "totalFeeInAssets",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct IUnderwriterVault.FeeInternal",
+        "internalType": "uint256",
         "name": "",
-        "type": "tuple"
+        "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -1660,25 +1590,6 @@
     "outputs": [
       {
         "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "name": "getNetUserDeposit",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
         "name": "",
         "type": "uint256"
       }
@@ -1902,25 +1813,6 @@
     "outputs": [
       {
         "internalType": "UD60x18",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      }
-    ],
-    "name": "getTimeOfDeposit",
-    "outputs": [
-      {
-        "internalType": "uint256",
         "name": "",
         "type": "uint256"
       }
@@ -2281,62 +2173,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "UD60x18",
-            "name": "assets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "balanceShares",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "performance",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "performanceFeeInAssets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "managementFeeInAssets",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "totalFeeInShares",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "totalFeeInAssets",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct IUnderwriterVault.FeeInternal",
-        "name": "vars",
-        "type": "tuple"
-      }
-    ],
-    "name": "maxTransferableShares",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -2798,6 +2634,19 @@
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "setLastManagementFeeTimestamp",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "value",
         "type": "uint256"
       }
@@ -2905,24 +2754,6 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "setNetUserDeposit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "UD60x18",
         "name": "value",
         "type": "uint256"
@@ -2955,24 +2786,6 @@
       }
     ],
     "name": "setSpotPrice",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "value",
-        "type": "uint256"
-      }
-    ],
-    "name": "setTimeOfDeposit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -3267,29 +3080,6 @@
   {
     "inputs": [],
     "name": "updateState",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "owner",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "shareBalanceBefore",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "shareAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateTimeOfDeposit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
