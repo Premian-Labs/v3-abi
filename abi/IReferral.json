@@ -70,7 +70,13 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "totalRebate",
+        "name": "primaryRebate",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "secondaryRebate",
         "type": "uint256"
       }
     ],
@@ -151,6 +157,40 @@
     "name": "claimRebate",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "referrer",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "tradingFee",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRebateAmounts",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "primaryRebate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "secondaryRebate",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -315,7 +355,7 @@
       },
       {
         "internalType": "address",
-        "name": "primaryReferrer",
+        "name": "referrer",
         "type": "address"
       },
       {
@@ -325,7 +365,12 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "tradingFee",
+        "name": "primaryRebate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "secondaryRebate",
         "type": "uint256"
       }
     ],

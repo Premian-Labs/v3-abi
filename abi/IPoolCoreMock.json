@@ -247,6 +247,30 @@
   {
     "inputs": [
       {
+        "internalType": "UD60x18",
+        "name": "lower",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "upper",
+        "type": "uint256"
+      }
+    ],
+    "name": "exposed_isRateNonTerminating",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "account",
         "type": "address"

@@ -108,6 +108,27 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "x",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "y",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "denominator",
+        "type": "uint256"
+      }
+    ],
+    "name": "PRBMath_MulDiv_Overflow",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "SD59x18",
         "name": "x",
         "type": "int256"
@@ -296,6 +317,27 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "lower",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "upper",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "depositSize",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidSize",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__InvalidTickPrice",
     "type": "error"
@@ -430,6 +472,11 @@
       }
     ],
     "name": "Pool__QuoteRFQOverfilled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Pool__SettlementFailed",
     "type": "error"
   },
   {
@@ -1657,6 +1704,30 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "lower",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "upper",
+        "type": "uint256"
+      }
+    ],
+    "name": "exposed_isRateNonTerminating",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {

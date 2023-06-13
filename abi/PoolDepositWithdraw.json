@@ -380,6 +380,27 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "lower",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "upper",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "depositSize",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidSize",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__InvalidTickPrice",
     "type": "error"
@@ -514,6 +535,11 @@
       }
     ],
     "name": "Pool__QuoteRFQOverfilled",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Pool__SettlementFailed",
     "type": "error"
   },
   {
