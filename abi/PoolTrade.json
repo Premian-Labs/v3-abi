@@ -396,6 +396,11 @@
   },
   {
     "inputs": [],
+    "name": "Pool__InvalidTickUpdate",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "Pool__InvalidTransfer",
     "type": "error"
   },
@@ -772,9 +777,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       }
     ],
     "name": "ClaimFees",
@@ -834,9 +839,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       },
       {
         "indexed": false,
@@ -1448,9 +1453,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       },
       {
         "indexed": false,

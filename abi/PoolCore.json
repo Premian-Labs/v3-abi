@@ -161,6 +161,17 @@
   {
     "inputs": [
       {
+        "internalType": "UD60x18",
+        "name": "x",
+        "type": "uint256"
+      }
+    ],
+    "name": "PRBMath_UD60x18_IntoSD59x18_Overflow",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "value",
         "type": "uint256"
@@ -361,6 +372,11 @@
   {
     "inputs": [],
     "name": "Pool__InvalidTickPrice",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Pool__InvalidTickUpdate",
     "type": "error"
   },
   {
@@ -741,9 +757,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       }
     ],
     "name": "ClaimFees",
@@ -803,9 +819,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       },
       {
         "indexed": false,
@@ -1417,9 +1433,9 @@
       },
       {
         "indexed": false,
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "lastFeeRate",
-        "type": "uint256"
+        "type": "int256"
       },
       {
         "indexed": false,

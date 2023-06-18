@@ -206,6 +206,11 @@
   },
   {
     "inputs": [],
+    "name": "Pool__InvalidTickUpdate",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "Pool__InvalidTransfer",
     "type": "error"
   },
