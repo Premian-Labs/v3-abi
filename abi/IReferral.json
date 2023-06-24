@@ -1,11 +1,6 @@
 [
   {
     "inputs": [],
-    "name": "Referral__NoRebatesToClaim",
-    "type": "error"
-  },
-  {
-    "inputs": [],
     "name": "Referral__PoolNotAuthorized",
     "type": "error"
   },
@@ -153,7 +148,13 @@
     "type": "event"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "tokens",
+        "type": "address[]"
+      }
+    ],
     "name": "claimRebate",
     "outputs": [],
     "stateMutability": "nonpayable",

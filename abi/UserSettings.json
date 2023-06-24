@@ -1,18 +1,88 @@
 [
   {
+    "inputs": [],
+    "name": "UserSettings__InvalidAction",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UserSettings__InvalidArrayLength",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum IUserSettings.Action[]",
+        "name": "actions",
+        "type": "uint8[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool[]",
+        "name": "authorization",
+        "type": "bool[]"
+      }
+    ],
+    "name": "ActionAuthorizationUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "AuthorizedCostUpdated",
+    "type": "event"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
         "name": "user",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
       }
     ],
-    "name": "getAuthorizedAgents",
+    "name": "getActionAuthorization",
     "outputs": [
       {
-        "internalType": "address[]",
-        "name": "",
-        "type": "address[]"
+        "internalType": "enum IUserSettings.Action[]",
+        "name": "actions",
+        "type": "uint8[]"
+      },
+      {
+        "internalType": "bool[]",
+        "name": "authorization",
+        "type": "bool[]"
       }
     ],
     "stateMutability": "view",
@@ -46,11 +116,16 @@
       },
       {
         "internalType": "address",
-        "name": "agent",
+        "name": "operator",
         "type": "address"
+      },
+      {
+        "internalType": "enum IUserSettings.Action",
+        "name": "action",
+        "type": "uint8"
       }
     ],
-    "name": "isAuthorizedAgent",
+    "name": "isActionAuthorized",
     "outputs": [
       {
         "internalType": "bool",
@@ -83,12 +158,22 @@
   {
     "inputs": [
       {
-        "internalType": "address[]",
-        "name": "agents",
-        "type": "address[]"
+        "internalType": "address",
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IUserSettings.Action[]",
+        "name": "actions",
+        "type": "uint8[]"
+      },
+      {
+        "internalType": "bool[]",
+        "name": "authorization",
+        "type": "bool[]"
       }
     ],
-    "name": "setAuthorizedAgents",
+    "name": "setActionAuthorization",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

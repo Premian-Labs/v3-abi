@@ -138,6 +138,27 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "enum IUserSettings.Action",
+        "name": "action",
+        "type": "uint8"
+      }
+    ],
+    "name": "Pool__ActionNotAuthorized",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__AgentNotAuthorized",
     "type": "error"
@@ -778,7 +799,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "agent",
+        "name": "operator",
         "type": "address"
       },
       {
@@ -814,7 +835,7 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "agentCost",
+        "name": "operatorCost",
         "type": "uint256"
       }
     ],
@@ -959,7 +980,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "agent",
+        "name": "operator",
         "type": "address"
       },
       {
@@ -995,7 +1016,7 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "agentCost",
+        "name": "operatorCost",
         "type": "uint256"
       }
     ],
@@ -1008,7 +1029,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "agent",
+        "name": "operator",
         "type": "address"
       },
       {
@@ -1062,7 +1083,7 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "agentCost",
+        "name": "operatorCost",
         "type": "uint256"
       }
     ],

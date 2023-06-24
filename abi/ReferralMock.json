@@ -43,7 +43,7 @@
   },
   {
     "inputs": [],
-    "name": "Referral__NoRebatesToClaim",
+    "name": "ReentrancyGuard__ReentrantCall",
     "type": "error"
   },
   {
@@ -238,7 +238,13 @@
     "type": "function"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "tokens",
+        "type": "address[]"
+      }
+    ],
     "name": "claimRebate",
     "outputs": [],
     "stateMutability": "nonpayable",
