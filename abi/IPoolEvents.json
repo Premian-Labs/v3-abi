@@ -36,11 +36,11 @@
       {
         "indexed": false,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       }
     ],
-    "name": "CancelQuoteRFQ",
+    "name": "CancelQuoteOB",
     "type": "event"
   },
   {
@@ -215,7 +215,7 @@
       {
         "indexed": true,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       },
       {
@@ -307,7 +307,7 @@
         "type": "bool"
       }
     ],
-    "name": "FillQuoteRFQ",
+    "name": "FillQuoteOB",
     "type": "event"
   },
   {

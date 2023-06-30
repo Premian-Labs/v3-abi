@@ -219,12 +219,12 @@
   },
   {
     "inputs": [],
-    "name": "Pool__InvalidQuoteRFQSignature",
+    "name": "Pool__InvalidQuoteOBSignature",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "Pool__InvalidQuoteRFQTaker",
+    "name": "Pool__InvalidQuoteOBTaker",
     "type": "error"
   },
   {
@@ -388,12 +388,12 @@
   },
   {
     "inputs": [],
-    "name": "Pool__QuoteRFQCancelled",
+    "name": "Pool__QuoteOBCancelled",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "Pool__QuoteRFQExpired",
+    "name": "Pool__QuoteOBExpired",
     "type": "error"
   },
   {
@@ -410,11 +410,11 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "quoteRFQSize",
+        "name": "quoteOBSize",
         "type": "uint256"
       }
     ],
-    "name": "Pool__QuoteRFQOverfilled",
+    "name": "Pool__QuoteOBOverfilled",
     "type": "error"
   },
   {
@@ -628,11 +628,11 @@
       {
         "indexed": false,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       }
     ],
-    "name": "CancelQuoteRFQ",
+    "name": "CancelQuoteOB",
     "type": "event"
   },
   {
@@ -807,7 +807,7 @@
       {
         "indexed": true,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       },
       {
@@ -899,7 +899,7 @@
         "type": "bool"
       }
     ],
-    "name": "FillQuoteRFQ",
+    "name": "FillQuoteOB",
     "type": "event"
   },
   {
@@ -1559,7 +1559,7 @@
         "type": "bytes32[]"
       }
     ],
-    "name": "cancelQuotesRFQ",
+    "name": "cancelQuotesOB",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -1868,8 +1868,8 @@
             "type": "uint256"
           }
         ],
-        "internalType": "struct IPoolInternal.QuoteRFQ",
-        "name": "quoteRFQ",
+        "internalType": "struct IPoolInternal.QuoteOB",
+        "name": "quoteOB",
         "type": "tuple"
       },
       {
@@ -1905,7 +1905,7 @@
         "type": "address"
       }
     ],
-    "name": "fillQuoteRFQ",
+    "name": "fillQuoteOB",
     "outputs": [
       {
         "internalType": "uint256",
@@ -2152,11 +2152,11 @@
       },
       {
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       }
     ],
-    "name": "getQuoteRFQFilledAmount",
+    "name": "getQuoteOBFilledAmount",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -2275,8 +2275,8 @@
             "type": "uint256"
           }
         ],
-        "internalType": "struct IPoolInternal.QuoteRFQ",
-        "name": "quoteRFQ",
+        "internalType": "struct IPoolInternal.QuoteOB",
+        "name": "quoteOB",
         "type": "tuple"
       },
       {
@@ -2307,7 +2307,7 @@
         "type": "tuple"
       }
     ],
-    "name": "isQuoteRFQValid",
+    "name": "isQuoteOBValid",
     "outputs": [
       {
         "internalType": "bool",
@@ -2315,7 +2315,7 @@
         "type": "bool"
       },
       {
-        "internalType": "enum IPoolInternal.InvalidQuoteRFQError",
+        "internalType": "enum IPoolInternal.InvalidQuoteOBError",
         "name": "",
         "type": "uint8"
       }

@@ -13,12 +13,12 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "_quoteAmount",
+        "name": "_getPriceAmount",
         "type": "uint256"
       },
       {
         "internalType": "UD60x18",
-        "name": "_quoteFromAmount",
+        "name": "_getPriceAtAmount",
         "type": "uint256"
       }
     ],
@@ -67,7 +67,7 @@
         "type": "address"
       }
     ],
-    "name": "quote",
+    "name": "getPrice",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -96,7 +96,7 @@
         "type": "uint256"
       }
     ],
-    "name": "quoteFrom",
+    "name": "getPriceAt",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -111,24 +111,11 @@
     "inputs": [
       {
         "internalType": "UD60x18",
-        "name": "_quoteAmount",
+        "name": "_getPriceAmount",
         "type": "uint256"
       }
     ],
-    "name": "setQuote",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "_quoteFromAmount",
-        "type": "uint256"
-      }
-    ],
-    "name": "setQuoteFrom",
+    "name": "setPrice",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -142,11 +129,24 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "_quoteFromAmount",
+        "name": "_getPriceAtAmount",
         "type": "uint256"
       }
     ],
-    "name": "setQuoteFrom",
+    "name": "setPriceAt",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "_getPriceAtAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "setPriceAt",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

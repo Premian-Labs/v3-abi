@@ -365,12 +365,12 @@
   },
   {
     "inputs": [],
-    "name": "Pool__InvalidQuoteRFQSignature",
+    "name": "Pool__InvalidQuoteOBSignature",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "Pool__InvalidQuoteRFQTaker",
+    "name": "Pool__InvalidQuoteOBTaker",
     "type": "error"
   },
   {
@@ -534,12 +534,12 @@
   },
   {
     "inputs": [],
-    "name": "Pool__QuoteRFQCancelled",
+    "name": "Pool__QuoteOBCancelled",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "Pool__QuoteRFQExpired",
+    "name": "Pool__QuoteOBExpired",
     "type": "error"
   },
   {
@@ -556,11 +556,11 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "quoteRFQSize",
+        "name": "quoteOBSize",
         "type": "uint256"
       }
     ],
-    "name": "Pool__QuoteRFQOverfilled",
+    "name": "Pool__QuoteOBOverfilled",
     "type": "error"
   },
   {
@@ -779,11 +779,11 @@
       {
         "indexed": false,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       }
     ],
-    "name": "CancelQuoteRFQ",
+    "name": "CancelQuoteOB",
     "type": "event"
   },
   {
@@ -958,7 +958,7 @@
       {
         "indexed": true,
         "internalType": "bytes32",
-        "name": "quoteRFQHash",
+        "name": "quoteOBHash",
         "type": "bytes32"
       },
       {
@@ -1050,7 +1050,7 @@
         "type": "bool"
       }
     ],
-    "name": "FillQuoteRFQ",
+    "name": "FillQuoteOB",
     "type": "event"
   },
   {

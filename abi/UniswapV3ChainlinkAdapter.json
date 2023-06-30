@@ -170,35 +170,6 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "tokenA",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "tokenB",
-        "type": "address"
-      }
-    ],
-    "name": "isPairSupported",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "isCached",
-        "type": "bool"
-      },
-      {
-        "internalType": "bool",
-        "name": "hasPath",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "tokenIn",
         "type": "address"
       },
@@ -208,7 +179,7 @@
         "type": "address"
       }
     ],
-    "name": "quote",
+    "name": "getPrice",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -237,12 +208,41 @@
         "type": "uint256"
       }
     ],
-    "name": "quoteFrom",
+    "name": "getPriceAt",
     "outputs": [
       {
         "internalType": "UD60x18",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenA",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenB",
+        "type": "address"
+      }
+    ],
+    "name": "isPairSupported",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "isCached",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "hasPath",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
