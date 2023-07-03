@@ -804,7 +804,7 @@
         "type": "tuple[]"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -823,7 +823,7 @@
         "type": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
