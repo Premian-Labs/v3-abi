@@ -48,6 +48,45 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "taker",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "size",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "intrinsicValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isCallPool",
+        "type": "bool"
+      }
+    ],
+    "name": "exerciseFee",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bool",
         "name": "isBuy",
         "type": "bool"

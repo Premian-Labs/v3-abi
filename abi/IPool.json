@@ -1799,6 +1799,11 @@
         "internalType": "uint256",
         "name": "exerciseValue",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "exerciseFee",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -1821,7 +1826,12 @@
     "outputs": [
       {
         "internalType": "uint256[]",
-        "name": "",
+        "name": "exerciseValues",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "exerciseFees",
         "type": "uint256[]"
       }
     ],
