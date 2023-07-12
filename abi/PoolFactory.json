@@ -13,12 +13,38 @@
       },
       {
         "internalType": "address",
-        "name": "initFeeCalculator",
+        "name": "wrappedNativeToken",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "poolFactoryDeployer",
         "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
     "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "min",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "max",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionMath__OutOfBoundsPrice",
+    "type": "error"
   },
   {
     "inputs": [],
@@ -49,12 +75,27 @@
   {
     "inputs": [
       {
-        "internalType": "SD59x18",
+        "internalType": "uint256",
         "name": "x",
-        "type": "int256"
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "y",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "denominator",
+        "type": "uint256"
       }
     ],
-    "name": "PRBMath_SD59x18_Exp2_InputTooBig",
+    "name": "PRBMath_MulDiv_Overflow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PRBMath_SD59x18_Abs_MinSD59x18",
     "type": "error"
   },
   {
@@ -65,7 +106,7 @@
         "type": "int256"
       }
     ],
-    "name": "PRBMath_SD59x18_Floor_Underflow",
+    "name": "PRBMath_SD59x18_Exp2_InputTooBig",
     "type": "error"
   },
   {
@@ -114,12 +155,17 @@
   {
     "inputs": [
       {
-        "internalType": "UD60x18",
+        "internalType": "SD59x18",
         "name": "x",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "y",
         "type": "uint256"
       }
     ],
-    "name": "PRBMath_UD60x18_Ceil_Overflow",
+    "name": "PRBMath_SD59x18_Powu_Overflow",
     "type": "error"
   },
   {
@@ -131,6 +177,17 @@
       }
     ],
     "name": "PRBMath_UD60x18_IntoSD59x18_Overflow",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "x",
+        "type": "uint256"
+      }
+    ],
+    "name": "PRBMath_UD60x18_Sqrt_Overflow",
     "type": "error"
   },
   {

@@ -11,17 +11,6 @@
     "type": "constructor"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "implementation",
-        "type": "address"
-      }
-    ],
-    "name": "InvalidImplementation",
-    "type": "error"
-  },
-  {
     "inputs": [],
     "name": "Ownable__NotOwner",
     "type": "error"
@@ -29,6 +18,17 @@
   {
     "inputs": [],
     "name": "Ownable__NotTransitiveOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "ProxyUpgradeableOwnable__InvalidImplementation",
     "type": "error"
   },
   {

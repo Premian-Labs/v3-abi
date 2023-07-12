@@ -1,0 +1,9 @@
+[
+  {
+    "inputs": [],
+    "name": "placeholder",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

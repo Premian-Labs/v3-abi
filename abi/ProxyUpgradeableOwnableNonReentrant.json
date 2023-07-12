@@ -2,16 +2,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint32",
-        "name": "period",
-        "type": "uint32"
-      },
-      {
-        "internalType": "uint256",
-        "name": "cardinalityPerMinute",
-        "type": "uint256"
-      },
-      {
         "internalType": "address",
         "name": "implementation",
         "type": "address"
@@ -48,17 +38,12 @@
   },
   {
     "inputs": [],
+    "name": "ReentrancyGuard__ReentrantCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "SafeOwnable__NotNomineeOwner",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "UniswapV3AdapterProxy__CardinalityPerMinuteNotSet",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "UniswapV3AdapterProxy__PeriodNotSet",
     "type": "error"
   },
   {
@@ -94,8 +79,34 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [],
+    "name": "ReentrancyStaticCallCheck",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "disabled",
+        "type": "bool"
+      }
+    ],
+    "name": "SetReentrancyGuardDisabled",
+    "type": "event"
+  },
+  {
     "stateMutability": "payable",
     "type": "fallback"
+  },
+  {
+    "inputs": [],
+    "name": "__staticCallCheck",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [],
@@ -152,6 +163,19 @@
       }
     ],
     "name": "setImplementation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "disabled",
+        "type": "bool"
+      }
+    ],
+    "name": "setReentrancyGuardDisabled",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

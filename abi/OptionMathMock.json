@@ -5,6 +5,27 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "min",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "max",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionMath__OutOfBoundsPrice",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "OptionMath__Underflow",
     "type": "error"
@@ -102,17 +123,6 @@
         "type": "int256"
       }
     ],
-    "name": "PRBMath_SD59x18_Floor_Underflow",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "SD59x18",
-        "name": "x",
-        "type": "int256"
-      }
-    ],
     "name": "PRBMath_SD59x18_IntoUD60x18_Underflow",
     "type": "error"
   },
@@ -146,17 +156,6 @@
       }
     ],
     "name": "PRBMath_SD59x18_Mul_Overflow",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "x",
-        "type": "uint256"
-      }
-    ],
-    "name": "PRBMath_UD60x18_Ceil_Overflow",
     "type": "error"
   },
   {
@@ -229,7 +228,7 @@
     "inputs": [
       {
         "internalType": "UD60x18",
-        "name": "spot",
+        "name": "strike",
         "type": "uint256"
       }
     ],
