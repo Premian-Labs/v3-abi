@@ -1,11 +1,16 @@
 {
   "name": "@premia/v3-abi",
-  "description": "ABI for Premia v3 contracts",
-  "version": "0.0.15",
+  "description": "ABI for Premia v3 contracts, and typechain classes for ethers-v6 target",
+  "main": "./typechain/index.ts",
+  "types": "./typechain/index.ts",
+  "version": "0.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Premian-Labs/v3-abi.git"
+  },
+  "scripts": {
+    "codegen": "typechain --target ethers-v6 --out-dir typechain ./abi/**/*.json"
   },
   "keywords": [
     "premia",
@@ -18,5 +23,14 @@
     "trading",
     "and",
     "market-making"
-  ]
+  ],
+  "devDependencies": {
+    "@typechain/ethers-v6": "^0.4.0",
+    "@types/node": "^20.4.2",
+    "typechain": "^8.2.0"
+  },
+  "dependencies": {
+    "ethers": "^6.6.3",
+    "typescript": "^5.1.6"
+  }
 }
