@@ -10,7 +10,7 @@
     "url": "https://github.com/Premian-Labs/v3-abi.git"
   },
   "scripts": {
-    "build": "tsc && copyfiles src/abi/**/*.json dist/abi/",
+    "build": "tsc && copyfiles -f src/abi/**/*.json dist/abi/",
     "codegen": "typechain --target ethers-v6 --out-dir src/typechain src/abi/**/*.json"
   },
   "keywords": [
