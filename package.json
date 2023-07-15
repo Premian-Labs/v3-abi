@@ -3,14 +3,14 @@
   "description": "ABI for Premia v3 contracts, and Typechain classes for ethers-v6 target",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "LGPL-3.0-or-later",
   "repository": {
     "type": "git",
     "url": "https://github.com/Premian-Labs/v3-abi.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && copyfiles src/abi/**/*.json dist/abi/",
     "codegen": "typechain --target ethers-v6 --out-dir src/typechain src/abi/**/*.json"
   },
   "keywords": [
@@ -28,10 +28,11 @@
   "devDependencies": {
     "@typechain/ethers-v6": "^0.4.0",
     "@types/node": "^20.4.2",
-    "typechain": "^8.2.0"
+    "copyfiles": "^2.4.1",
+    "typechain": "^8.2.0",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "ethers": "^6.6.3",
-    "typescript": "^5.1.6"
+    "ethers": "^6.6.3"
   }
 }
