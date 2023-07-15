@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["typechain"],
   "compilerOptions": {
     "outDir": "dist",
     "target": "es2020",
