@@ -2677,22 +2677,22 @@
           {
             "components": [
               {
-                "internalType": "SD59x18",
+                "internalType": "SD49x28",
                 "name": "delta",
                 "type": "int256"
               },
               {
-                "internalType": "UD60x18",
+                "internalType": "UD50x28",
                 "name": "externalFeeRate",
                 "type": "uint256"
               },
               {
-                "internalType": "SD59x18",
+                "internalType": "SD49x28",
                 "name": "longDelta",
                 "type": "int256"
               },
               {
-                "internalType": "SD59x18",
+                "internalType": "SD49x28",
                 "name": "shortDelta",
                 "type": "int256"
               },
@@ -2712,12 +2712,12 @@
             "type": "uint256"
           },
           {
-            "internalType": "UD60x18",
+            "internalType": "UD50x28",
             "name": "longRate",
             "type": "uint256"
           },
           {
-            "internalType": "UD60x18",
+            "internalType": "UD50x28",
             "name": "shortRate",
             "type": "uint256"
           }

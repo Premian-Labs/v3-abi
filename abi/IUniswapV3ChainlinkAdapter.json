@@ -1,7 +1,0 @@
-[
-  {
-    "inputs": [],
-    "name": "UniswapV3ChainlinkAdapter__TokenCannotBeWrappedNative",
-    "type": "error"
-  }
-]

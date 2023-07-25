@@ -5,6 +5,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "PoolFactory__InitializationFeeIsZero",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -18,6 +23,11 @@
       }
     ],
     "name": "PoolFactory__InitializationFeeRequired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PoolFactory__InvalidInput",
     "type": "error"
   },
   {
@@ -115,6 +125,11 @@
   {
     "inputs": [],
     "name": "PoolFactory__PoolNotExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "PoolFactory__TransferNativeTokenFailed",
     "type": "error"
   },
   {
