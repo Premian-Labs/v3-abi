@@ -1,0 +1,459 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "claimEnd",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__ClaimPeriodEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "claimEnd",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__ClaimPeriodNotEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "exercisePeriodEnd",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__ExercisePeriodNotEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OptionReward__InvalidSettlement",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "lockupEnd",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__LockupNotExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__NoBaseReserved",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OptionReward__NoRedeemableLongs",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "option",
+        "type": "address"
+      }
+    ],
+    "name": "OptionReward__NotCallOption",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "settlementPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__OptionInTheMoney",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__OptionNotExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "settlementPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__OptionOutTheMoney",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "blockTimestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__PriceIsStale",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "OptionReward__PriceIsZero",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "OptionReward__UnderwriterNotAuthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maturity",
+        "type": "uint256"
+      }
+    ],
+    "name": "OptionReward__ZeroRewardPerContract",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "baseAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "RewardsClaimed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "baseAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "RewardsNotClaimedReleased",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "intrinsicValuePerContract",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "maxRedeemableLongs",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "baseAmountPaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "baseAmountFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "quoteAmountPaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "quoteAmountFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "baseAmountReserved",
+        "type": "uint256"
+      }
+    ],
+    "name": "Settled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "longReceiver",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
+      }
+    ],
+    "name": "Underwrite",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      }
+    ],
+    "name": "claimRewards",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "baseAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      }
+    ],
+    "name": "getRedeemableLongs",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getTotalBaseReserved",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      }
+    ],
+    "name": "releaseRewardsNotClaimed",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      }
+    ],
+    "name": "settle",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "longReceiver",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
+      }
+    ],
+    "name": "underwrite",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

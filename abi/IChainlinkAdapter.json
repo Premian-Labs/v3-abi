@@ -13,6 +13,17 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "denomination",
+        "type": "address"
+      }
+    ],
+    "name": "ChainlinkAdapter__InvalidDenomination",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bytes",
         "name": "data",
         "type": "bytes"

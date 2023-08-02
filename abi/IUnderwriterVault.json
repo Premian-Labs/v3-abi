@@ -893,6 +893,19 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "getUtilisation",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",

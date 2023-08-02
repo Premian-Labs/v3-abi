@@ -32,6 +32,11 @@
   },
   {
     "inputs": [],
+    "name": "PoolFactory__InvalidOracleAdapter",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "PoolFactory__NotAuthorized",
     "type": "error"
   },

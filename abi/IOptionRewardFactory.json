@@ -1,0 +1,235 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "contract IOptionPS",
+        "name": "option",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "priceRepository",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "paymentSplitter",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "discount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "penalty",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "optionDuration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "lockupDuration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "claimDuration",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "ProxyDeployed",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "contract IOptionPS",
+            "name": "option",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "priceRepository",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "paymentSplitter",
+            "type": "address"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "discount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "penalty",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lockupDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "claimDuration",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOptionRewardFactory.OptionRewardArgs",
+        "name": "args",
+        "type": "tuple"
+      }
+    ],
+    "name": "deployProxy",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getManagedProxyImplementation",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "contract IOptionPS",
+            "name": "option",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "priceRepository",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "paymentSplitter",
+            "type": "address"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "discount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "penalty",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "optionDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lockupDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "claimDuration",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IOptionRewardFactory.OptionRewardArgs",
+        "name": "args",
+        "type": "tuple"
+      }
+    ],
+    "name": "getProxyAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "isProxyDeployed",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "setManagedProxyImplementation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

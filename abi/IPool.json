@@ -218,6 +218,22 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastDeposit",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__InvalidPositionState",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__InvalidQuoteOBSignature",
     "type": "error"
@@ -1429,6 +1445,11 @@
       {
         "internalType": "bool",
         "name": "isPremiumNormalized",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isOrderbook",
         "type": "bool"
       },
       {
@@ -2654,6 +2675,11 @@
       {
         "internalType": "bool",
         "name": "isPremiumNormalized",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isOrderbook",
         "type": "bool"
       }
     ],
