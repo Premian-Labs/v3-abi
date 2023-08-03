@@ -153,6 +153,67 @@
     "anonymous": false,
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "denomination",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feed",
+            "type": "address"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IFeedRegistry.FeedMappingArgs[]",
+        "name": "args",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "FeedMappingsRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "base",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "quote",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "name": "PriceUpdate",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": false,
         "internalType": "address",
         "name": "tokenA",
@@ -173,6 +234,36 @@
     ],
     "name": "UpdatedPathForPair",
     "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "denomination",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feed",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct IFeedRegistry.FeedMappingArgs[]",
+        "name": "args",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "batchRegisterFeedMappings",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -198,6 +289,30 @@
         "internalType": "uint8[]",
         "name": "decimals",
         "type": "uint8[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenA",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenB",
+        "type": "address"
+      }
+    ],
+    "name": "feed",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -307,6 +422,34 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "base",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "quote",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "name": "setPriceAt",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
