@@ -129,22 +129,6 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "blockTimestamp",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
-      }
-    ],
-    "name": "OptionReward__PriceIsStale",
-    "type": "error"
-  },
-  {
     "inputs": [],
     "name": "OptionReward__PriceIsZero",
     "type": "error"

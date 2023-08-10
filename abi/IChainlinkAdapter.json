@@ -35,10 +35,26 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "denomination",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
         "name": "target",
         "type": "uint256"
-      },
+      }
+    ],
+    "name": "ChainlinkAdapter__PriceAtOrLeftOfTargetNotFound",
+    "type": "error"
+  },
+  {
+    "inputs": [
       {
         "internalType": "uint256",
         "name": "updatedAt",
@@ -46,11 +62,11 @@
       },
       {
         "internalType": "uint256",
-        "name": "blockTimestamp",
+        "name": "target",
         "type": "uint256"
       }
     ],
-    "name": "ChainlinkAdapter__PriceAfterTargetIsStale",
+    "name": "ChainlinkAdapter__PriceLeftOfTargetStale",
     "type": "error"
   },
   {
@@ -185,13 +201,13 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "base",
+        "name": "token",
         "type": "address"
       },
       {
         "indexed": true,
         "internalType": "address",
-        "name": "quote",
+        "name": "denomination",
         "type": "address"
       },
       {
@@ -298,12 +314,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "tokenA",
+        "name": "token",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "tokenB",
+        "name": "denomination",
         "type": "address"
       }
     ],
@@ -428,12 +444,12 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "base",
+        "name": "token",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "quote",
+        "name": "denomination",
         "type": "address"
       },
       {
@@ -447,7 +463,7 @@
         "type": "uint256"
       }
     ],
-    "name": "setPriceAt",
+    "name": "setTokenPriceAt",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

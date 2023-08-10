@@ -11,7 +11,7 @@
       {
         "indexed": false,
         "internalType": "address",
-        "name": "priceRepository",
+        "name": "oracleAdapter",
         "type": "address"
       },
       {
@@ -71,7 +71,7 @@
           },
           {
             "internalType": "address",
-            "name": "priceRepository",
+            "name": "oracleAdapter",
             "type": "address"
           },
           {
@@ -145,7 +145,7 @@
           },
           {
             "internalType": "address",
-            "name": "priceRepository",
+            "name": "oracleAdapter",
             "type": "address"
           },
           {

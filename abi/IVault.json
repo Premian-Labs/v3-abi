@@ -101,6 +101,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "Vault__InvariantViolated",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "UD60x18",

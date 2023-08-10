@@ -7,7 +7,7 @@ set -e
 
 rm -rf ./temp
 
-git clone -b dev https://github.com/Premian-Labs/premia-v3-contracts-private.git ./temp
+git clone -b master https://github.com/Premian-Labs/premia-v3-contracts-private.git ./temp
 cd temp
 yarn install
 forge install
