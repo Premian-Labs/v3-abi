@@ -3,7 +3,7 @@
   "description": "ABI for Premia v3 contracts, and Typechain classes for ethers-v6 target",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "license": "LGPL-3.0-or-later",
   "repository": {
     "type": "git",
