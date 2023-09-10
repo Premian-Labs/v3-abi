@@ -142,7 +142,7 @@
       },
       {
         "internalType": "UD60x18",
-        "name": "authorizedCost",
+        "name": "authorizedCostInWrappedNative",
         "type": "uint256"
       }
     ],

@@ -3,6 +3,19 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "ManagedImplementationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "contract IOptionPS",
         "name": "option",
@@ -10,13 +23,13 @@
       },
       {
         "indexed": false,
-        "internalType": "address",
+        "internalType": "contract IOracleAdapter",
         "name": "oracleAdapter",
         "type": "address"
       },
       {
         "indexed": false,
-        "internalType": "address",
+        "internalType": "contract IPaymentSplitter",
         "name": "paymentSplitter",
         "type": "address"
       },
@@ -52,6 +65,18 @@
       },
       {
         "indexed": false,
+        "internalType": "UD60x18",
+        "name": "fee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "feeReceiver",
+        "type": "address"
+      },
+      {
+        "indexed": false,
         "internalType": "address",
         "name": "proxy",
         "type": "address"
@@ -70,12 +95,12 @@
             "type": "address"
           },
           {
-            "internalType": "address",
+            "internalType": "contract IOracleAdapter",
             "name": "oracleAdapter",
             "type": "address"
           },
           {
-            "internalType": "address",
+            "internalType": "contract IPaymentSplitter",
             "name": "paymentSplitter",
             "type": "address"
           },
@@ -123,6 +148,32 @@
   },
   {
     "inputs": [],
+    "name": "getDefaultFee",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getDefaultFeeReceiver",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getManagedProxyImplementation",
     "outputs": [
       {
@@ -144,12 +195,12 @@
             "type": "address"
           },
           {
-            "internalType": "address",
+            "internalType": "contract IOracleAdapter",
             "name": "oracleAdapter",
             "type": "address"
           },
           {
-            "internalType": "address",
+            "internalType": "contract IPaymentSplitter",
             "name": "paymentSplitter",
             "type": "address"
           },
@@ -177,9 +228,19 @@
             "internalType": "uint256",
             "name": "claimDuration",
             "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "fee",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "feeReceiver",
+            "type": "address"
           }
         ],
-        "internalType": "struct IOptionRewardFactory.OptionRewardArgs",
+        "internalType": "struct IOptionRewardFactory.OptionRewardKey",
         "name": "args",
         "type": "tuple"
       }

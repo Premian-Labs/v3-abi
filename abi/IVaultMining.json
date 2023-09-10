@@ -3,6 +3,27 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "rewardsAvailable",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "rewardsRequested",
+        "type": "uint256"
+      }
+    ],
+    "name": "VaultMining__InsufficientRewards",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "caller",
         "type": "address"
       }
@@ -23,6 +44,25 @@
         "indexed": true,
         "internalType": "address",
         "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "rewardAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "AllocateRewards",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
         "type": "address"
       },
       {
@@ -92,9 +132,27 @@
         "internalType": "address[]",
         "name": "vaults",
         "type": "address[]"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "amount",
+        "type": "uint256"
       }
     ],
     "name": "claim",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "vaults",
+        "type": "address[]"
+      }
+    ],
+    "name": "claimAll",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -107,9 +165,9 @@
         "type": "address"
       },
       {
-        "internalType": "address",
-        "name": "vault",
-        "type": "address"
+        "internalType": "address[]",
+        "name": "vaults",
+        "type": "address[]"
       }
     ],
     "name": "getPendingUserRewards",
@@ -182,11 +240,6 @@
           {
             "internalType": "UD60x18",
             "name": "shares",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "reward",
             "type": "uint256"
           },
           {
@@ -267,11 +320,6 @@
       {
         "internalType": "address",
         "name": "user",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "vault",
         "type": "address"
       },
       {
