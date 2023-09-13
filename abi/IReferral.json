@@ -59,7 +59,7 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "tier",
+        "name": "primaryRebatePercent",
         "type": "uint256"
       },
       {

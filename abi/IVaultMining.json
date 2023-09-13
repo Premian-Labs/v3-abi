@@ -244,6 +244,11 @@
           },
           {
             "internalType": "UD60x18",
+            "name": "__deprecated_reward",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
             "name": "rewardDebt",
             "type": "uint256"
           }

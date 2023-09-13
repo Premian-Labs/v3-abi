@@ -2292,6 +2292,11 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
         "components": [
           {
             "internalType": "address",

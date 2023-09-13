@@ -1,5 +1,16 @@
 [
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "OptionRewardFactory__ProxyAlreadyDeployed",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
