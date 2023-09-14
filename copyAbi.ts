@@ -28,7 +28,8 @@ const abiList = [
   "IVaultMining",
   "IVaultRegistry",
   "IVolatilityOracle",
-  "IVxPremia"
+  "IVxPremia",
+  "OrderbookStream"
 ];
 
 for (const dir of ['./abi', './dist', './typechain']) {
