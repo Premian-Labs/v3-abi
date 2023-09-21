@@ -150,6 +150,22 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "diff",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "size",
+        "type": "uint256"
+      }
+    ],
+    "name": "Pool__DifferenceOfSizeAndContractDeltaTooLarge",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "Pool__FlashLoanCallbackFailed",
     "type": "error"
