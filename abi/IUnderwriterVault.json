@@ -102,6 +102,11 @@
   },
   {
     "inputs": [],
+    "name": "Vault__InvalidSettingsUpdate",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "Vault__InvariantViolated",
     "type": "error"
   },
@@ -119,6 +124,11 @@
       }
     ],
     "name": "Vault__MaximumAmountExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Vault__NotAuthorized",
     "type": "error"
   },
   {
@@ -243,86 +253,6 @@
     "inputs": [
       {
         "indexed": true,
-        "internalType": "bytes32",
-        "name": "borrowId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "borrowToken",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "collateralToken",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "sizeBorrowed",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "collateralLocked",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "borrowFee",
-        "type": "uint256"
-      }
-    ],
-    "name": "Borrow",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "bytes32",
-        "name": "borrowId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "collateralToken",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "collateralLiquidated",
-        "type": "uint256"
-      }
-    ],
-    "name": "BorrowLiquidated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
         "internalType": "address",
         "name": "feeReceiver",
         "type": "address"
@@ -410,49 +340,13 @@
     "anonymous": false,
     "inputs": [
       {
-        "indexed": true,
-        "internalType": "bytes32",
-        "name": "borrowId",
-        "type": "bytes32"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "from",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "borrowToken",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "collateralToken",
-        "type": "address"
-      },
-      {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "amountRepaid",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "collateralUnlocked",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "repayFee",
+        "name": "pricePerShare",
         "type": "uint256"
       }
     ],
-    "name": "RepayBorrow",
+    "name": "PricePerShare",
     "type": "event"
   },
   {
@@ -461,59 +355,23 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "sender",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "recipient",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "tokenIn",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "tokenOut",
+        "name": "pool",
         "type": "address"
       },
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "amountIn",
+        "name": "contractSize",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "amountOut",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "takerFee",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "makerRebate",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "vaultFee",
+        "name": "fee",
         "type": "uint256"
       }
     ],
-    "name": "Swap",
+    "name": "Settle",
     "type": "event"
   },
   {
@@ -600,6 +458,19 @@
     "anonymous": false,
     "inputs": [],
     "name": "UpdateQuotes",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "settings",
+        "type": "bytes"
+      }
+    ],
+    "name": "UpdateSettings",
     "type": "event"
   },
   {
@@ -892,6 +763,19 @@
         "internalType": "uint256",
         "name": "premium",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getSettings",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
       }
     ],
     "stateMutability": "view",

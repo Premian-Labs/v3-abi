@@ -745,6 +745,12 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
         "name": "collateral",
         "type": "uint256"
       },
@@ -1257,6 +1263,12 @@
         "internalType": "uint256",
         "name": "destTokenId",
         "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
+        "type": "uint256"
       }
     ],
     "name": "TransferPosition",
@@ -1367,6 +1379,12 @@
         "indexed": true,
         "internalType": "uint256",
         "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
         "type": "uint256"
       },
       {

@@ -270,25 +270,6 @@
   {
     "inputs": [
       {
-        "internalType": "bytes32",
-        "name": "vaultType",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getSettings",
-    "outputs": [
-      {
-        "internalType": "bytes",
-        "name": "",
-        "type": "bytes"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "vault",
         "type": "address"
@@ -792,24 +773,6 @@
       }
     ],
     "name": "setImplementation",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "vaultType",
-        "type": "bytes32"
-      },
-      {
-        "internalType": "bytes",
-        "name": "updatedSettings",
-        "type": "bytes"
-      }
-    ],
-    "name": "updateSettings",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
