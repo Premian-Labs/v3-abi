@@ -26,13 +26,13 @@
     "market-making"
   ],
   "devDependencies": {
-    "@typechain/ethers-v6": "^0.4.3",
-    "@types/node": "^20.4.6",
+    "@typechain/ethers-v6": "^0.5.0",
+    "@types/node": "^20.8.0",
     "ts-node": "^10.9.1",
     "typechain": "^8.3.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "ethers": "^6.7.0"
+    "ethers": "^6.7.1"
   }
 }
