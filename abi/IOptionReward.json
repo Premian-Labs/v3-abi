@@ -22,22 +22,6 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "maturity",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "exercisePeriodEnd",
-        "type": "uint256"
-      }
-    ],
-    "name": "OptionReward__ExercisePeriodNotEnded",
-    "type": "error"
-  },
-  {
     "inputs": [],
     "name": "OptionReward__InvalidSettlement",
     "type": "error"
@@ -88,44 +72,12 @@
   {
     "inputs": [
       {
-        "internalType": "UD60x18",
-        "name": "settlementPrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "strike",
-        "type": "uint256"
-      }
-    ],
-    "name": "OptionReward__OptionInTheMoney",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "uint256",
         "name": "maturity",
         "type": "uint256"
       }
     ],
     "name": "OptionReward__OptionNotExpired",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "settlementPrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "strike",
-        "type": "uint256"
-      }
-    ],
-    "name": "OptionReward__OptionOutTheMoney",
     "type": "error"
   },
   {
@@ -363,6 +315,30 @@
       }
     ],
     "name": "getRedeemableLongs",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "strike",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "maturity",
+        "type": "uint64"
+      }
+    ],
+    "name": "getRewardPerContract",
     "outputs": [
       {
         "internalType": "UD60x18",
