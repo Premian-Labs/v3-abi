@@ -288,12 +288,6 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "contractSize",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
         "name": "strike",
         "type": "uint256"
       },
@@ -301,6 +295,12 @@
         "indexed": false,
         "internalType": "uint256",
         "name": "maturity",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "contractSize",
         "type": "uint256"
       },
       {

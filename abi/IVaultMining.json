@@ -165,12 +165,12 @@
         "type": "address"
       },
       {
-        "internalType": "address[]",
-        "name": "vaults",
-        "type": "address[]"
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
       }
     ],
-    "name": "getPendingUserRewards",
+    "name": "getPendingUserRewardsFromVault",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -197,6 +197,25 @@
   {
     "inputs": [],
     "name": "getRewardsPerYear",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getTotalUserRewards",
     "outputs": [
       {
         "internalType": "UD60x18",
@@ -265,6 +284,25 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getUserRewards",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "vault",
         "type": "address"
       }
@@ -285,7 +323,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "lastRewardTimestamp",
+            "name": "__deprecated_lastRewardTimestamp",
             "type": "uint256"
           },
           {
