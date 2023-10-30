@@ -17,7 +17,7 @@ forge install
 # Build and copy the contracts
 forge build --extra-output-files abi
 cd ..
-ts-node ./copyAbi.ts
+ts-node ./utils/copyAbi.ts
 
 # Delete stale deployment directory if it exists
 rm -rf ./deployment
