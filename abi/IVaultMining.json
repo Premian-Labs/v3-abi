@@ -330,6 +330,11 @@
             "internalType": "UD60x18",
             "name": "accRewardsPerShare",
             "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "rewardDebt",
+            "type": "uint256"
           }
         ],
         "internalType": "struct IVaultMining.VaultInfo",
