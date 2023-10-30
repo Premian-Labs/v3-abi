@@ -10,7 +10,7 @@
     "url": "https://github.com/Premian-Labs/v3-abi.git"
   },
   "scripts": {
-    "build": "bash updateAbi.sh && yarn codegen && tsc",
+    "build": "bash updateAbi.sh",
     "codegen": "typechain --target ethers-v6 --out-dir typechain abi/**/*.json"
   },
   "keywords": [

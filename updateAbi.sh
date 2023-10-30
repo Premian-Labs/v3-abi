@@ -34,3 +34,6 @@ echo "export { default as arbitrum } from './arbitrum.json';" >> ./deployment/in
 echo "export { default as arbitrumGoerli } from './arbitrumGoerli.json';" >> ./deployment/index.ts
 echo "export { default as arbitrumNova } from './arbitrumNova.json';" >> ./deployment/index.ts
 echo "export { DeploymentMetadata, ContractKey, ContractDeploymentMetadata, ContractType, DeploymentPath } from './types';" >> ./deployment/index.ts
+
+yarn codegen
+tsc
