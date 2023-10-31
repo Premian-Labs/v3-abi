@@ -1,6 +1,5 @@
 .npmrc
 node_modules
 dist
-deployment
 typechain
 temp
