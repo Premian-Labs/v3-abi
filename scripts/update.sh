@@ -1,12 +1,15 @@
 #!/bin/bash
-
 # To be able to run this on Windows : npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"
 
 # Exit on first error
 set -e
 
-# Delete stale temp directory if it exists
+# Delete stale directories if they exists
 rm -rf ./temp
+rm -rf ./abi
+rm -rf ./deployment
+rm -rf ./dist
+rm -rf ./typechain
 
 # Clone the repo and install dependencies
 git clone -b master https://github.com/Premian-Labs/premia-v3-contracts-private.git ./temp
@@ -18,9 +21,6 @@ forge install
 forge build --extra-output-files abi
 cd ..
 ts-node ./utils/copyAbi.ts
-
-# Delete stale deployment directory if it exists
-rm -rf ./deployment
 
 # Copy the deployment files
 mkdir ./deployment
@@ -38,5 +38,8 @@ echo "export const arbitrum = arbitrumMetadata as DeploymentMetadata;" >> ./depl
 echo "export const arbitrumGoerli = arbitrumGoerliMetadata as DeploymentMetadata;" >> ./deployment/index.ts
 echo "export const arbitrumNova = arbitrumNovaMetadata as { core: { [key: string]: ContractDeploymentMetadata } };" >> ./deployment/index.ts
 
+# Generate the typechain files
 yarn codegen
+
+# Compile and generate build files
 tsc
