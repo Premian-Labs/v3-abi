@@ -2,6 +2,7 @@
 import {JsonFragment} from "ethers";
 import IChainlinkAdapterJSON from './IChainlinkAdapter.json';
 import IERC20JSON from './IERC20.json';
+import IERC20MetadataJSON from './IERC20Metadata.json';
 import IERC20PermitJSON from './IERC20Permit.json';
 import IERC20RouterJSON from './IERC20Router.json';
 import IERC1155JSON from './IERC1155.json';
@@ -31,6 +32,7 @@ import IVxPremiaJSON from './IVxPremia.json';
 import OrderbookStreamJSON from './OrderbookStream.json';
 export const IChainlinkAdapter = IChainlinkAdapterJSON as ReadonlyArray<JsonFragment>;
 export const IERC20 = IERC20JSON as ReadonlyArray<JsonFragment>;
+export const IERC20Metadata = IERC20MetadataJSON as ReadonlyArray<JsonFragment>;
 export const IERC20Permit = IERC20PermitJSON as ReadonlyArray<JsonFragment>;
 export const IERC20Router = IERC20RouterJSON as ReadonlyArray<JsonFragment>;
 export const IERC1155 = IERC1155JSON as ReadonlyArray<JsonFragment>;
