@@ -3,7 +3,6 @@ import fs from 'fs';
 const abiList = [
   "IChainlinkAdapter",
   "IERC20",
-  "IERC20Metadata",
   "IERC20Permit",
   "IERC20Router",
   "IERC1155",
