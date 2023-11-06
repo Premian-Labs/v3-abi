@@ -43,7 +43,7 @@ for (const el of abiList) {
 }
 
 for (const el of abiList) {
-  data = data + `export const ${el} = ${el}JSON as ReadonlyArray<JsonFragment>;\n`;
+  data = data + `export const ${el}__abi = ${el}JSON as ReadonlyArray<JsonFragment>;\n`;
 }
 
 fs.writeFileSync('./abi/index.ts', data);
