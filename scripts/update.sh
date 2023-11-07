@@ -34,6 +34,7 @@ echo "import {ContractDeploymentMetadata, DeploymentMetadata} from './types';" >
 echo "import arbitrumMetadata from './arbitrum.json';" >> ./deployment/index.ts
 echo "import arbitrumGoerliMetadata from './arbitrumGoerli.json';" >> ./deployment/index.ts
 echo "import arbitrumNovaMetadata from './arbitrumNova.json';" >> ./deployment/index.ts
+echo "export { ContractDeploymentMetadata, ContractKey, ContractType,  DeploymentMetadata } from './types';" >> ./deployment/index.ts
 echo "export const arbitrum = arbitrumMetadata as DeploymentMetadata;" >> ./deployment/index.ts
 echo "export const arbitrumGoerli = arbitrumGoerliMetadata as DeploymentMetadata;" >> ./deployment/index.ts
 echo "export const arbitrumNova = arbitrumNovaMetadata as { core: { [key: string]: ContractDeploymentMetadata } };" >> ./deployment/index.ts
