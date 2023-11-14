@@ -2,6 +2,7 @@ import fs from 'fs';
 
 const abiList = [
   "IChainlinkAdapter",
+  "IDualMining",
   "IERC20",
   "IERC20Permit",
   "IERC20Router",

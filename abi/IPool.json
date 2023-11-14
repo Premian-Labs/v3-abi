@@ -113,11 +113,6 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "Pool__AgentNotAuthorized",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
         "internalType": "UD60x18",

@@ -351,6 +351,64 @@
   },
   {
     "inputs": [],
+    "name": "getSettings",
+    "outputs": [
+      {
+        "internalType": "contract IOptionPS",
+        "name": "option",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IOracleAdapter",
+        "name": "oracleAdapter",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IPaymentSplitter",
+        "name": "paymentSplitter",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "percentOfSpot",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "penalty",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "optionDuration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lockupDuration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "claimDuration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "fee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "feeReceiver",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getTotalBaseReserved",
     "outputs": [
       {

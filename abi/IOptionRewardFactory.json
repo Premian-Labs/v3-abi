@@ -96,7 +96,7 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "discount",
+        "name": "percentOfSpot",
         "type": "uint256"
       },
       {
@@ -166,7 +166,7 @@
           },
           {
             "internalType": "UD60x18",
-            "name": "discount",
+            "name": "percentOfSpot",
             "type": "uint256"
           },
           {
@@ -266,7 +266,7 @@
           },
           {
             "internalType": "UD60x18",
-            "name": "discount",
+            "name": "percentOfSpot",
             "type": "uint256"
           },
           {
