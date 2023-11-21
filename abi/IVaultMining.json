@@ -37,6 +37,25 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "dualMiningPool",
+        "type": "address"
+      }
+    ],
+    "name": "AddDualMiningPool",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "user",
         "type": "address"
       },
@@ -73,6 +92,25 @@
       }
     ],
     "name": "Claim",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "dualMiningPool",
+        "type": "address"
+      }
+    ],
+    "name": "RemoveDualMiningPool",
     "type": "event"
   },
   {
@@ -161,6 +199,25 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
+    "name": "getDualMiningPools",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "user",
         "type": "address"
       },
@@ -171,6 +228,25 @@
       }
     ],
     "name": "getPendingUserRewardsFromVault",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
+    "name": "getPendingVaultRewards",
     "outputs": [
       {
         "internalType": "UD60x18",

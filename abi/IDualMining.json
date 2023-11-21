@@ -1,0 +1,263 @@
+[
+  {
+    "inputs": [],
+    "name": "DualMining__AlreadyInitialized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DualMining__MiningEnded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DualMining__NoMiningRewards",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DualMining__NoShareSupply",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "DualMining__NotAuthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DualMining__NotInitialized",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "rewardAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Claim",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "initialParentAccRewardsPerShare",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
+        "name": "finalParentAccRewardsPerShare",
+        "type": "uint256"
+      }
+    ],
+    "name": "MiningEnded",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "addRewards",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "claim",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getPendingUserRewards",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRewardsAvailable",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "getUserInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "lastUpdateTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "lastParentAccTotalRewards",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "lastAccTotalRewards",
+            "type": "uint256"
+          },
+          {
+            "internalType": "UD60x18",
+            "name": "reward",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct IDualMining.UserInfo",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "initialParentAccRewardsPerShare",
+        "type": "uint256"
+      }
+    ],
+    "name": "init",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "poolRewards",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "accRewardsPerShare",
+        "type": "uint256"
+      }
+    ],
+    "name": "updatePool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "oldShares",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "oldRewardDebt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "poolRewards",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "userRewards",
+        "type": "uint256"
+      },
+      {
+        "internalType": "UD60x18",
+        "name": "accRewardsPerShare",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateUser",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
