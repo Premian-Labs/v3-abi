@@ -5,37 +5,6 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "PoolFactory__InitializationFeeIsZero",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "msgValue",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "fee",
-        "type": "uint256"
-      }
-    ],
-    "name": "PoolFactory__InitializationFeeRequired",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "PoolFactory__InvalidInput",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "PoolFactory__NotAuthorized",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -120,11 +89,6 @@
       }
     ],
     "name": "PoolFactory__PoolAlreadyDeployed",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "PoolFactory__PoolNotExpired",
     "type": "error"
   },
   {
@@ -233,32 +197,6 @@
       }
     ],
     "name": "PricingPath",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "UD60x18",
-        "name": "discountPerPool",
-        "type": "uint256"
-      }
-    ],
-    "name": "SetDiscountPerPool",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "feeReceiver",
-        "type": "address"
-      }
-    ],
-    "name": "SetFeeReceiver",
     "type": "event"
   },
   {
@@ -436,77 +374,6 @@
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "address",
-            "name": "base",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "quote",
-            "type": "address"
-          },
-          {
-            "internalType": "address",
-            "name": "oracleAdapter",
-            "type": "address"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "strike",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "maturity",
-            "type": "uint256"
-          },
-          {
-            "internalType": "bool",
-            "name": "isCallPool",
-            "type": "bool"
-          }
-        ],
-        "internalType": "struct IPoolFactory.PoolKey",
-        "name": "k",
-        "type": "tuple"
-      }
-    ],
-    "name": "removeDiscount",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "discountPerPool",
-        "type": "uint256"
-      }
-    ],
-    "name": "setDiscountPerPool",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "feeReceiver",
-        "type": "address"
-      }
-    ],
-    "name": "setFeeReceiver",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]

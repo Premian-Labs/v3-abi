@@ -138,13 +138,32 @@
       {
         "indexed": false,
         "internalType": "UD60x18",
+        "name": "voteMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "SetVoteMultiplier",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "UD60x18",
         "name": "votes",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "UD60x18",
-        "name": "vaultUtilisationRate",
+        "name": "voteMultiplier",
         "type": "uint256"
       }
     ],
@@ -416,6 +435,25 @@
         "internalType": "struct IVaultMining.VaultInfo",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
+    "name": "getVoteMultiplier",
+    "outputs": [
+      {
+        "internalType": "UD60x18",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
