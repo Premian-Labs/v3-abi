@@ -102,6 +102,11 @@
   },
   {
     "inputs": [],
+    "name": "Vault__InsufficientShorts",
+    "type": "error"
+  },
+  {
+    "inputs": [],
     "name": "Vault__InvalidSettingsUpdate",
     "type": "error"
   },
@@ -165,6 +170,11 @@
   {
     "inputs": [],
     "name": "Vault__OutOfDeltaBounds",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Vault__SellDisabled",
     "type": "error"
   },
   {
