@@ -7,7 +7,7 @@ Below are examples of how to access package resources in Typescript.
 
 ```typescript
 import {Contract, Wallet} from 'ethers'
-// Importing of ABIs (typechain)
+// Importing of Typechain contract bindings
 import {IPool__factory} from "@premia/v3-abi/typechain";
 // Import of ABIs (json)
 import {IPool__abi} from "@premia/v3-abi/abi"
