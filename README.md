@@ -10,8 +10,7 @@ import {Contract, Wallet} from 'ethers'
 // Importing of Typechain contract bindings
 import {IPool__factory} from "@premia/v3-abi/typechain";
 // Import of ABIs (json)
-import {IPool__abi} from "@premia/v3-abi/abi"
-import {IPoolFactory__abi} from "@premia/v3-abi/abi";
+import {IPool__abi, IPoolFactory__abi} from "@premia/v3-abi/abi"
 // Importing all deployment related contract addresses
 import {arbitrum} from '@premia/v3-abi/deployment'
 
