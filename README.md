@@ -24,7 +24,7 @@ const signer = new Wallet(DUMMY_PRIVATE_KEY, DUMMY_PROVIDER)
 // NOTE: Be sure to use the proxy of a contract and not its implementation
 const poolFactoryAddr = arbitrum.core.PoolFactoryProxy.address
 // Creating a contract instance for the factory contract
-const poolFactory = new Contract(poolFactoryAddr,signer)
+const poolFactory = new Contract(poolFactoryAddr, IPoolFactory__abi, signer);
 // NOTE: poolKey object is not covered here. Please see contract docs for details
 const poolAddress = await poolFactory.getPoolAddress(DUMMY_POOLKEY)
 
