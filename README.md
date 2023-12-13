@@ -33,5 +33,5 @@ const poolAddress = await poolFactory.getPoolAddress(DUMMY_POOLKEY)
 // Using typechain or ethers Contract class to create a pool instance
 const iPool = IPool__factory.connect(poolAddress, signer)
 // OR
-const pool = new Contract(poolAddress, poolAbi, provider)
+const pool = new Contract(poolAddress, IPool__abi, signer)
 ```
