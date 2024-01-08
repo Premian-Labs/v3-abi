@@ -1,227 +1,227 @@
 [
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "arrayLength",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "size",
-        "type": "uint256"
-      }
-    ],
-    "name": "OracleAdapter__ArrayCannotExpand",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "int256",
-        "name": "price",
-        "type": "int256"
-      }
-    ],
-    "name": "OracleAdapter__InvalidPrice",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "target",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "blockTimestamp",
-        "type": "uint256"
-      }
-    ],
-    "name": "OracleAdapter__InvalidTarget",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "tokenA",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "tokenB",
-        "type": "address"
-      }
-    ],
-    "name": "OracleAdapter__PairCannotBeSupported",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "tokenA",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "tokenB",
-        "type": "address"
-      }
-    ],
-    "name": "OracleAdapter__PairNotSupported",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "tokenA",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "tokenB",
-        "type": "address"
-      }
-    ],
-    "name": "OracleAdapter__TokensAreSame",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "OracleAdapter__ZeroAddress",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      }
-    ],
+    "type": "function",
     "name": "describePricingPath",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
     "outputs": [
       {
-        "internalType": "enum IOracleAdapter.AdapterType",
         "name": "adapterType",
-        "type": "uint8"
+        "type": "uint8",
+        "internalType": "enum IOracleAdapter.AdapterType"
       },
       {
-        "internalType": "address[][]",
         "name": "path",
-        "type": "address[][]"
+        "type": "address[][]",
+        "internalType": "address[][]"
       },
       {
-        "internalType": "uint8[]",
         "name": "decimals",
-        "type": "uint8[]"
+        "type": "uint8[]",
+        "internalType": "uint8[]"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "tokenIn",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "tokenOut",
-        "type": "address"
-      }
-    ],
+    "type": "function",
     "name": "getPrice",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
-        "internalType": "address",
         "name": "tokenIn",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "address",
         "name": "tokenOut",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "target",
-        "type": "uint256"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "name": "getPriceAt",
     "outputs": [
       {
-        "internalType": "UD60x18",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "UD60x18"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "getPriceAt",
     "inputs": [
       {
-        "internalType": "address",
-        "name": "tokenA",
-        "type": "address"
+        "name": "tokenIn",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "address",
-        "name": "tokenB",
-        "type": "address"
+        "name": "tokenOut",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "target",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    "name": "isPairSupported",
     "outputs": [
       {
-        "internalType": "bool",
-        "name": "isCached",
-        "type": "bool"
-      },
-      {
-        "internalType": "bool",
-        "name": "hasPath",
-        "type": "bool"
+        "name": "",
+        "type": "uint256",
+        "internalType": "UD60x18"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "isPairSupported",
     "inputs": [
       {
-        "internalType": "address",
         "name": "tokenA",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "address",
         "name": "tokenB",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       }
     ],
+    "outputs": [
+      {
+        "name": "isCached",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "hasPath",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "upsertPair",
+    "inputs": [
+      {
+        "name": "tokenA",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenB",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
     "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__ArrayCannotExpand",
+    "inputs": [
+      {
+        "name": "arrayLength",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__InvalidPrice",
+    "inputs": [
+      {
+        "name": "price",
+        "type": "int256",
+        "internalType": "int256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__InvalidTarget",
+    "inputs": [
+      {
+        "name": "target",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "blockTimestamp",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__PairCannotBeSupported",
+    "inputs": [
+      {
+        "name": "tokenA",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenB",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__PairNotSupported",
+    "inputs": [
+      {
+        "name": "tokenA",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenB",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__TokensAreSame",
+    "inputs": [
+      {
+        "name": "tokenA",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenB",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "OracleAdapter__ZeroAddress",
+    "inputs": []
   }
 ]

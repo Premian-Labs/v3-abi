@@ -1,44 +1,44 @@
 [
   {
-    "inputs": [],
+    "type": "error",
     "name": "Pricing__PriceCannotBeComputedWithinTickRange",
-    "type": "error"
+    "inputs": []
   },
   {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "lower",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "upper",
-        "type": "uint256"
-      },
-      {
-        "internalType": "UD60x18",
-        "name": "marketPrice",
-        "type": "uint256"
-      }
-    ],
+    "type": "error",
     "name": "Pricing__PriceOutOfRange",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
-        "internalType": "UD60x18",
         "name": "lower",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "UD60x18"
       },
       {
-        "internalType": "UD60x18",
         "name": "upper",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "marketPrice",
+        "type": "uint256",
+        "internalType": "UD60x18"
       }
-    ],
+    ]
+  },
+  {
+    "type": "error",
     "name": "Pricing__UpperNotGreaterThanLower",
-    "type": "error"
+    "inputs": [
+      {
+        "name": "lower",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "upper",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ]
   }
 ]

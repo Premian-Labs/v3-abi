@@ -1,39 +1,39 @@
 [
   {
-    "inputs": [],
+    "type": "error",
     "name": "Position__InvalidOrderType",
-    "type": "error"
+    "inputs": []
   },
   {
-    "inputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "currentBalance",
-        "type": "uint256"
-      },
-      {
-        "internalType": "SD59x18",
-        "name": "amount",
-        "type": "int256"
-      }
-    ],
+    "type": "error",
     "name": "Position__InvalidPositionUpdate",
-    "type": "error"
-  },
-  {
     "inputs": [
       {
-        "internalType": "UD60x18",
-        "name": "lower",
-        "type": "uint256"
+        "name": "currentBalance",
+        "type": "uint256",
+        "internalType": "UD60x18"
       },
       {
-        "internalType": "UD60x18",
-        "name": "upper",
-        "type": "uint256"
+        "name": "amount",
+        "type": "int256",
+        "internalType": "SD59x18"
       }
-    ],
+    ]
+  },
+  {
+    "type": "error",
     "name": "Position__LowerGreaterOrEqualUpper",
-    "type": "error"
+    "inputs": [
+      {
+        "name": "lower",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "upper",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ]
   }
 ]

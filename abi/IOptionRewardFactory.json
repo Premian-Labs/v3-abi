@@ -1,356 +1,356 @@
 [
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "proxy",
-        "type": "address"
-      }
-    ],
-    "name": "OptionRewardFactory__ProxyAlreadyDeployed",
-    "type": "error"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "implementation",
-        "type": "address"
-      }
-    ],
-    "name": "ManagedImplementationSet",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "option",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address[][]",
-        "name": "basePath",
-        "type": "address[][]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint8[]",
-        "name": "basePathDecimals",
-        "type": "uint8[]"
-      },
-      {
-        "indexed": false,
-        "internalType": "enum IOracleAdapter.AdapterType",
-        "name": "baseAdapterType",
-        "type": "uint8"
-      },
-      {
-        "indexed": false,
-        "internalType": "address[][]",
-        "name": "quotePath",
-        "type": "address[][]"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint8[]",
-        "name": "quotePathDecimals",
-        "type": "uint8[]"
-      },
-      {
-        "indexed": false,
-        "internalType": "enum IOracleAdapter.AdapterType",
-        "name": "quoteAdapterType",
-        "type": "uint8"
-      }
-    ],
-    "name": "PricingPath",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "contract IOptionPS",
-        "name": "option",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "contract IOracleAdapter",
-        "name": "oracleAdapter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "contract IPaymentSplitter",
-        "name": "paymentSplitter",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "percentOfSpot",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "penalty",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "optionDuration",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "lockupDuration",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "claimDuration",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "UD60x18",
-        "name": "fee",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "feeReceiver",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "proxy",
-        "type": "address"
-      }
-    ],
-    "name": "ProxyDeployed",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "components": [
-          {
-            "internalType": "contract IOptionPS",
-            "name": "option",
-            "type": "address"
-          },
-          {
-            "internalType": "contract IOracleAdapter",
-            "name": "oracleAdapter",
-            "type": "address"
-          },
-          {
-            "internalType": "contract IPaymentSplitter",
-            "name": "paymentSplitter",
-            "type": "address"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "percentOfSpot",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "penalty",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "optionDuration",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "lockupDuration",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "claimDuration",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct IOptionRewardFactory.OptionRewardArgs",
-        "name": "args",
-        "type": "tuple"
-      }
-    ],
+    "type": "function",
     "name": "deployProxy",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getDefaultFee",
-    "outputs": [
-      {
-        "internalType": "UD60x18",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getDefaultFeeReceiver",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getManagedProxyImplementation",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
+        "name": "args",
+        "type": "tuple",
+        "internalType": "struct IOptionRewardFactory.OptionRewardArgs",
         "components": [
           {
-            "internalType": "contract IOptionPS",
             "name": "option",
-            "type": "address"
+            "type": "address",
+            "internalType": "contract IOptionPS"
           },
           {
-            "internalType": "contract IOracleAdapter",
             "name": "oracleAdapter",
-            "type": "address"
+            "type": "address",
+            "internalType": "contract IOracleAdapter"
           },
           {
-            "internalType": "contract IPaymentSplitter",
             "name": "paymentSplitter",
-            "type": "address"
+            "type": "address",
+            "internalType": "contract IPaymentSplitter"
           },
           {
-            "internalType": "UD60x18",
             "name": "percentOfSpot",
-            "type": "uint256"
+            "type": "uint256",
+            "internalType": "UD60x18"
           },
           {
-            "internalType": "UD60x18",
             "name": "penalty",
-            "type": "uint256"
+            "type": "uint256",
+            "internalType": "UD60x18"
           },
           {
-            "internalType": "uint256",
             "name": "optionDuration",
-            "type": "uint256"
+            "type": "uint256",
+            "internalType": "uint256"
           },
           {
-            "internalType": "uint256",
             "name": "lockupDuration",
-            "type": "uint256"
+            "type": "uint256",
+            "internalType": "uint256"
           },
           {
-            "internalType": "uint256",
             "name": "claimDuration",
-            "type": "uint256"
-          },
-          {
-            "internalType": "UD60x18",
-            "name": "fee",
-            "type": "uint256"
-          },
-          {
-            "internalType": "address",
-            "name": "feeReceiver",
-            "type": "address"
+            "type": "uint256",
+            "internalType": "uint256"
           }
-        ],
-        "internalType": "struct IOptionRewardFactory.OptionRewardKey",
-        "name": "args",
-        "type": "tuple"
+        ]
       }
     ],
-    "name": "getProxyAddress",
     "outputs": [
       {
-        "internalType": "address",
         "name": "",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getDefaultFee",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getDefaultFeeReceiver",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getManagedProxyImplementation",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getProxyAddress",
+    "inputs": [
+      {
+        "name": "args",
+        "type": "tuple",
+        "internalType": "struct IOptionRewardFactory.OptionRewardKey",
+        "components": [
+          {
+            "name": "option",
+            "type": "address",
+            "internalType": "contract IOptionPS"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "contract IOracleAdapter"
+          },
+          {
+            "name": "paymentSplitter",
+            "type": "address",
+            "internalType": "contract IPaymentSplitter"
+          },
+          {
+            "name": "percentOfSpot",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "penalty",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "optionDuration",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "lockupDuration",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "claimDuration",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "fee",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "feeReceiver",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "bool",
         "name": "",
-        "type": "bool"
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "isProxyDeployed",
     "inputs": [
       {
-        "internalType": "address",
         "name": "proxy",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "name": "isProxyDeployed",
     "outputs": [
       {
-        "internalType": "bool",
         "name": "",
-        "type": "bool"
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
+    "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "setManagedProxyImplementation",
     "inputs": [
       {
-        "internalType": "address",
         "name": "implementation",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "name": "setManagedProxyImplementation",
     "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "ManagedImplementationSet",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PricingPath",
+    "inputs": [
+      {
+        "name": "option",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "basePath",
+        "type": "address[][]",
+        "indexed": false,
+        "internalType": "address[][]"
+      },
+      {
+        "name": "basePathDecimals",
+        "type": "uint8[]",
+        "indexed": false,
+        "internalType": "uint8[]"
+      },
+      {
+        "name": "baseAdapterType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum IOracleAdapter.AdapterType"
+      },
+      {
+        "name": "quotePath",
+        "type": "address[][]",
+        "indexed": false,
+        "internalType": "address[][]"
+      },
+      {
+        "name": "quotePathDecimals",
+        "type": "uint8[]",
+        "indexed": false,
+        "internalType": "uint8[]"
+      },
+      {
+        "name": "quoteAdapterType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum IOracleAdapter.AdapterType"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "ProxyDeployed",
+    "inputs": [
+      {
+        "name": "option",
+        "type": "address",
+        "indexed": true,
+        "internalType": "contract IOptionPS"
+      },
+      {
+        "name": "oracleAdapter",
+        "type": "address",
+        "indexed": false,
+        "internalType": "contract IOracleAdapter"
+      },
+      {
+        "name": "paymentSplitter",
+        "type": "address",
+        "indexed": false,
+        "internalType": "contract IPaymentSplitter"
+      },
+      {
+        "name": "percentOfSpot",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "penalty",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "optionDuration",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "lockupDuration",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "claimDuration",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "fee",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "feeReceiver",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "proxy",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "OptionRewardFactory__ProxyAlreadyDeployed",
+    "inputs": [
+      {
+        "name": "proxy",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
   }
 ]
