@@ -5,20 +5,18 @@ const abiList = [
   "IDualMining",
   "IERC20",
   "IERC20Permit",
-  "IERC20Router",
   "IERC1155",
   "IERC4626",
   "IExchangeHelper",
   "IFeeConverter",
+  "IOptionCS",
+  "IOptionCSFactory",
   "IOptionPS",
   "IOptionPSFactory",
   "IOptionReward",
   "IOptionRewardFactory",
   "IOracleAdapter",
-  "IPool",
-  "IPoolFactory",
-  "IPosition",
-  "IPricing",
+  "IOrderbook",
   "IReferral",
   "ISolidStateDiamond",
   "ISolidStateERC20",
@@ -30,7 +28,7 @@ const abiList = [
   "IVaultRegistry",
   "IVolatilityOracle",
   "IVxPremia",
-  "OrderbookStream"
+  "OrderbookStream",
 ];
 
 fs.mkdirSync('./abi');
