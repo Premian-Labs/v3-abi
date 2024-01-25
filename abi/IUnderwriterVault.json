@@ -196,25 +196,10 @@
     "name": "getQuote",
     "inputs": [
       {
-        "name": "poolKey",
+        "name": "params",
         "type": "tuple",
-        "internalType": "struct IPoolFactory.PoolKey",
+        "internalType": "struct IOptionCSInternal.OptionParams",
         "components": [
-          {
-            "name": "base",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "quote",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
-          },
           {
             "name": "strike",
             "type": "uint256",
@@ -226,7 +211,7 @@
             "internalType": "uint256"
           },
           {
-            "name": "isCallPool",
+            "name": "isCall",
             "type": "bool",
             "internalType": "bool"
           }
@@ -638,25 +623,10 @@
     "name": "trade",
     "inputs": [
       {
-        "name": "poolKey",
+        "name": "params",
         "type": "tuple",
-        "internalType": "struct IPoolFactory.PoolKey",
+        "internalType": "struct IOptionCSInternal.OptionParams",
         "components": [
-          {
-            "name": "base",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "quote",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
-          },
           {
             "name": "strike",
             "type": "uint256",
@@ -668,7 +638,7 @@
             "internalType": "uint256"
           },
           {
-            "name": "isCallPool",
+            "name": "isCall",
             "type": "bool",
             "internalType": "bool"
           }
@@ -924,10 +894,27 @@
     "name": "Settle",
     "inputs": [
       {
-        "name": "pool",
-        "type": "address",
+        "name": "params",
+        "type": "tuple",
         "indexed": true,
-        "internalType": "address"
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
       },
       {
         "name": "contractSize",
@@ -955,10 +942,27 @@
         "internalType": "address"
       },
       {
-        "name": "pool",
-        "type": "address",
+        "name": "params",
+        "type": "tuple",
         "indexed": true,
-        "internalType": "address"
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
       },
       {
         "name": "contractSize",
@@ -1235,7 +1239,7 @@
   },
   {
     "type": "error",
-    "name": "Vault__OptionPoolNotListed",
+    "name": "Vault__OptionTypeMismatch",
     "inputs": []
   },
   {

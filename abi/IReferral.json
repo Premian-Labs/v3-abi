@@ -377,7 +377,7 @@
   },
   {
     "type": "error",
-    "name": "Referral__PoolNotAuthorized",
+    "name": "Referral__NotAuthorized",
     "inputs": []
   }
 ]

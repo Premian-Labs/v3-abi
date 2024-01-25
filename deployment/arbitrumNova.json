@@ -9,6 +9,26 @@
       "timestamp": 1691662833,
       "txHash": "0x5394ebd048e12555f6729afc3f9be05e255622e50bf0128d2d4e236fdaf4a61e",
       "owner": ""
+    },
+    "OrderbookStreamImplementation": {
+      "address": "0x8b43fCD71C6F8DdA95a28b359667fE1D06B7Ec7a",
+      "block": 41928759,
+      "commitHash": "80b5564540853a2987b73fb83bb411b474a9c199",
+      "contractType": "Implementation",
+      "deploymentArgs": [],
+      "timestamp": 1705948079,
+      "txHash": "0x3afc62a3b02fe32708d86d1e98266774168c3d447b077359117bf9a87214caef",
+      "owner": ""
+    },
+    "OrderbookStreamProxy": {
+      "address": "0x5e41E1FE57e69345F000a7888E7C82e653DD34ba",
+      "block": 41928769,
+      "commitHash": "80b5564540853a2987b73fb83bb411b474a9c199",
+      "contractType": "Proxy",
+      "deploymentArgs": ["0x8b43fCD71C6F8DdA95a28b359667fE1D06B7Ec7a"],
+      "timestamp": 1705948081,
+      "txHash": "0xa3246b44e6949e3e19a95b250471c1ecb10c24eaa9bb924b076878bf868c8f03",
+      "owner": "0xC1E5E997EA88eb0aA18aF4cEde444bE8c8E1e2C1"
     }
   }
 }

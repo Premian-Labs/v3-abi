@@ -4,14 +4,14 @@
     "name": "add",
     "inputs": [
       {
-        "name": "quote",
+        "name": "quotesOBWithSignature",
         "type": "tuple[]",
-        "internalType": "struct OrderbookStream.Quote[]",
+        "internalType": "struct OrderbookStream.QuoteOBWithSignature[]",
         "components": [
           {
-            "name": "poolKey",
+            "name": "quoteOB",
             "type": "tuple",
-            "internalType": "struct IPoolFactory.PoolKey",
+            "internalType": "struct IOrderbook.QuoteOB",
             "components": [
               {
                 "name": "base",
@@ -39,11 +39,160 @@
                 "internalType": "uint256"
               },
               {
-                "name": "isCallPool",
+                "name": "isCall",
                 "type": "bool",
                 "internalType": "bool"
+              },
+              {
+                "name": "provider",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "taker",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "price",
+                "type": "uint256",
+                "internalType": "UD60x18"
+              },
+              {
+                "name": "size",
+                "type": "uint256",
+                "internalType": "UD60x18"
+              },
+              {
+                "name": "isBuy",
+                "type": "bool",
+                "internalType": "bool"
+              },
+              {
+                "name": "deadline",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "salt",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "nonce",
+                "type": "uint256",
+                "internalType": "uint256"
               }
             ]
+          },
+          {
+            "name": "signature",
+            "type": "tuple",
+            "internalType": "struct IOrderbook.Signature",
+            "components": [
+              {
+                "name": "r",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              },
+              {
+                "name": "yParityAndS",
+                "type": "bytes32",
+                "internalType": "bytes32"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "PublishQuote",
+    "inputs": [
+      {
+        "name": "optionPair",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct IOptionCSFactory.OptionCSArgs",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          }
+        ]
+      },
+      {
+        "name": "optionParams",
+        "type": "tuple",
+        "indexed": true,
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      },
+      {
+        "name": "quoteOB",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOrderbook.QuoteOB",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
           },
           {
             "name": "provider",
@@ -58,12 +207,12 @@
           {
             "name": "price",
             "type": "uint256",
-            "internalType": "uint256"
+            "internalType": "UD60x18"
           },
           {
             "name": "size",
             "type": "uint256",
-            "internalType": "uint256"
+            "internalType": "UD60x18"
           },
           {
             "name": "isBuy",
@@ -81,122 +230,17 @@
             "internalType": "uint256"
           },
           {
-            "name": "signature",
-            "type": "tuple",
-            "internalType": "struct OrderbookStream.Signature",
-            "components": [
-              {
-                "name": "r",
-                "type": "bytes32",
-                "internalType": "bytes32"
-              },
-              {
-                "name": "s",
-                "type": "bytes32",
-                "internalType": "bytes32"
-              },
-              {
-                "name": "v",
-                "type": "uint8",
-                "internalType": "uint8"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "event",
-    "name": "PublishQuote",
-    "inputs": [
-      {
-        "name": "poolKeyHash",
-        "type": "tuple",
-        "indexed": true,
-        "internalType": "struct IPoolFactory.PoolKey",
-        "components": [
-          {
-            "name": "base",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "quote",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
+            "name": "nonce",
             "type": "uint256",
             "internalType": "uint256"
-          },
-          {
-            "name": "isCallPool",
-            "type": "bool",
-            "internalType": "bool"
           }
         ]
-      },
-      {
-        "name": "provider",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "taker",
-        "type": "address",
-        "indexed": false,
-        "internalType": "address"
-      },
-      {
-        "name": "price",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      },
-      {
-        "name": "size",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      },
-      {
-        "name": "isBuy",
-        "type": "bool",
-        "indexed": false,
-        "internalType": "bool"
-      },
-      {
-        "name": "deadline",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      },
-      {
-        "name": "salt",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
       },
       {
         "name": "signature",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct OrderbookStream.Signature",
+        "internalType": "struct IOrderbook.Signature",
         "components": [
           {
             "name": "r",
@@ -204,52 +248,9 @@
             "internalType": "bytes32"
           },
           {
-            "name": "s",
+            "name": "yParityAndS",
             "type": "bytes32",
             "internalType": "bytes32"
-          },
-          {
-            "name": "v",
-            "type": "uint8",
-            "internalType": "uint8"
-          }
-        ]
-      },
-      {
-        "name": "poolKey",
-        "type": "tuple",
-        "indexed": false,
-        "internalType": "struct IPoolFactory.PoolKey",
-        "components": [
-          {
-            "name": "base",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "quote",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
-          },
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "isCallPool",
-            "type": "bool",
-            "internalType": "bool"
           }
         ]
       }

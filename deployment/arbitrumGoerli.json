@@ -38,7 +38,7 @@
       "timestamp": 0,
       "owner": ""
     },
-    "PremiaDiamond": {
+    "PoolDiamond": {
       "address": "0x558A90f1D04DFF85BfBEAA3c1300fb2E9CF25f60",
       "contractType": "DiamondProxy",
       "deploymentArgs": [],
@@ -463,6 +463,76 @@
       "timestamp": 1700072459,
       "txHash": "0xa5d4759347f0187e283f70a9f4f3a960cb6cb2d02b7e66dc3f07dfd15507a989",
       "owner": "0x0e2fF9cbb1b0866b9988311C4d55BbC3e584bb54"
+    },
+    "OrderbookImplementation": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OrderbookProxy": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OptionCSBase": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OptionCSCore": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OptionCSDiamond": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OptionCSFactoryImplementation": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OptionCSFactoryProxy": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
     }
   },
   "feeConverter": {
