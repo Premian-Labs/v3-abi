@@ -1,4 +1,4 @@
-[
+export const IOracleAdapter = [
   {
     "type": "function",
     "name": "describePricingPath",
@@ -224,4 +224,4 @@
     "name": "OracleAdapter__ZeroAddress",
     "inputs": []
   }
-]
+] as const;

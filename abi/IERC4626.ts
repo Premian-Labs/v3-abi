@@ -1,4 +1,4 @@
-[
+export const IERC4626 = [
   {
     "type": "function",
     "name": "allowance",
@@ -611,4 +611,4 @@
     ],
     "anonymous": false
   }
-]
+] as const;

@@ -1,4 +1,4 @@
-[
+export const OrderbookStream = [
   {
     "type": "function",
     "name": "add",
@@ -257,4 +257,4 @@
     ],
     "anonymous": false
   }
-]
+] as const;

@@ -1,4 +1,4 @@
-[
+export const ISolidStateDiamond = [
   {
     "type": "fallback",
     "stateMutability": "payable"
@@ -335,4 +335,4 @@
     "name": "SafeOwnable__NotNomineeOwner",
     "inputs": []
   }
-]
+] as const;

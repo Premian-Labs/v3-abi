@@ -1,4 +1,4 @@
-[
+export const IOptionReward = [
   {
     "type": "function",
     "name": "claimRewards",
@@ -492,4 +492,4 @@
       }
     ]
   }
-]
+] as const;

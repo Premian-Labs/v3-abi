@@ -1,4 +1,4 @@
-[
+export const ISolidStateERC4626 = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",
@@ -190,83 +190,6 @@
       }
     ],
     "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "getQuote",
-    "inputs": [
-      {
-        "name": "params",
-        "type": "tuple",
-        "internalType": "struct IOptionCSInternal.OptionParams",
-        "components": [
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "isCall",
-            "type": "bool",
-            "internalType": "bool"
-          }
-        ]
-      },
-      {
-        "name": "size",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "isBuy",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "taker",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "premium",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "getSettings",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "getUtilisation",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      }
-    ],
-    "stateMutability": "view"
   },
   {
     "type": "function",
@@ -574,13 +497,6 @@
   },
   {
     "type": "function",
-    "name": "settle",
-    "inputs": [],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
     "name": "symbol",
     "inputs": [],
     "outputs": [
@@ -617,56 +533,6 @@
       }
     ],
     "stateMutability": "view"
-  },
-  {
-    "type": "function",
-    "name": "trade",
-    "inputs": [
-      {
-        "name": "params",
-        "type": "tuple",
-        "internalType": "struct IOptionCSInternal.OptionParams",
-        "components": [
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "isCall",
-            "type": "bool",
-            "internalType": "bool"
-          }
-        ]
-      },
-      {
-        "name": "size",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "isBuy",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "premiumLimit",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "referrer",
-        "type": "address",
-        "internalType": "address"
-      }
-    ],
-    "outputs": [],
-    "stateMutability": "nonpayable"
   },
   {
     "type": "function",
@@ -719,19 +585,6 @@
         "internalType": "bool"
       }
     ],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "updateSettings",
-    "inputs": [
-      {
-        "name": "settings",
-        "type": "bytes",
-        "internalType": "bytes"
-      }
-    ],
-    "outputs": [],
     "stateMutability": "nonpayable"
   },
   {
@@ -790,25 +643,6 @@
   },
   {
     "type": "event",
-    "name": "ClaimProtocolFees",
-    "inputs": [
-      {
-        "name": "feeReceiver",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "feesClaimed",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
     "name": "Deposit",
     "inputs": [
       {
@@ -840,171 +674,6 @@
   },
   {
     "type": "event",
-    "name": "ManagementFeePaid",
-    "inputs": [
-      {
-        "name": "recipient",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "managementFee",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "PerformanceFeePaid",
-    "inputs": [
-      {
-        "name": "recipient",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "performanceFee",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "PricePerShare",
-    "inputs": [
-      {
-        "name": "pricePerShare",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "Settle",
-    "inputs": [
-      {
-        "name": "params",
-        "type": "tuple",
-        "indexed": true,
-        "internalType": "struct IOptionCSInternal.OptionParams",
-        "components": [
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "isCall",
-            "type": "bool",
-            "internalType": "bool"
-          }
-        ]
-      },
-      {
-        "name": "contractSize",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "fee",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "Trade",
-    "inputs": [
-      {
-        "name": "user",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "params",
-        "type": "tuple",
-        "indexed": true,
-        "internalType": "struct IOptionCSInternal.OptionParams",
-        "components": [
-          {
-            "name": "strike",
-            "type": "uint256",
-            "internalType": "UD60x18"
-          },
-          {
-            "name": "maturity",
-            "type": "uint256",
-            "internalType": "uint256"
-          },
-          {
-            "name": "isCall",
-            "type": "bool",
-            "internalType": "bool"
-          }
-        ]
-      },
-      {
-        "name": "contractSize",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "isBuy",
-        "type": "bool",
-        "indexed": false,
-        "internalType": "bool"
-      },
-      {
-        "name": "premium",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "takerFee",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "makerRebate",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "vaultFee",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
     "name": "Transfer",
     "inputs": [
       {
@@ -1024,25 +693,6 @@
         "type": "uint256",
         "indexed": false,
         "internalType": "uint256"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "UpdateQuotes",
-    "inputs": [],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "UpdateSettings",
-    "inputs": [
-      {
-        "name": "settings",
-        "type": "bytes",
-        "indexed": false,
-        "internalType": "bytes"
       }
     ],
     "anonymous": false
@@ -1158,164 +808,5 @@
     "type": "error",
     "name": "ERC4626Base__MaximumAmountExceeded",
     "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__AboveMaxSlippage",
-    "inputs": [
-      {
-        "name": "totalPremium",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "premiumLimit",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "Vault__AddressZero",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__InsufficientFunds",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__InsufficientShorts",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__InvalidSettingsUpdate",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__InvariantViolated",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__MaximumAmountExceeded",
-    "inputs": [
-      {
-        "name": "maximum",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "Vault__NotAuthorized",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__OptionExpired",
-    "inputs": [
-      {
-        "name": "timestamp",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "maturity",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "Vault__OptionTypeMismatch",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__OptionTypeMismatchWithVault",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__OutOfDTEBounds",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__OutOfDeltaBounds",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__SellDisabled",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__SettingsNotFromRegistry",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__SettingsUpdateIsEmpty",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__StrikeZero",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__TradeMustBeBuy",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__TransferExceedsBalance",
-    "inputs": [
-      {
-        "name": "balance",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "amount",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      }
-    ]
-  },
-  {
-    "type": "error",
-    "name": "Vault__UtilisationOutOfBounds",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__ZeroAsset",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__ZeroShares",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "Vault__ZeroSize",
-    "inputs": []
   }
-]
+] as const;

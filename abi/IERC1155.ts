@@ -1,4 +1,4 @@
-[
+export const IERC1155 = [
   {
     "type": "function",
     "name": "balanceOf",
@@ -273,4 +273,4 @@
     ],
     "anonymous": false
   }
-]
+] as const;

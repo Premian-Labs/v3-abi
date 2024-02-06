@@ -1,4 +1,4 @@
-[
+export const IOptionPS = [
   {
     "type": "function",
     "name": "accountsByToken",
@@ -956,4 +956,4 @@
       }
     ]
   }
-]
+] as const;

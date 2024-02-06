@@ -1,4 +1,4 @@
-[
+export const IOptionCS = [
   {
     "type": "function",
     "name": "accountsByToken",
@@ -1900,4 +1900,4 @@
     "name": "OptionCS__ZeroSize",
     "inputs": []
   }
-]
+] as const;

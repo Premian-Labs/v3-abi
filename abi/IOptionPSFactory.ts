@@ -1,4 +1,4 @@
-[
+export const IOptionPSFactory = [
   {
     "type": "function",
     "name": "deployProxy",
@@ -6,7 +6,7 @@
       {
         "name": "args",
         "type": "tuple",
-        "internalType": "struct IOptionCSFactory.OptionCSArgs",
+        "internalType": "struct IOptionPSFactory.OptionPSArgs",
         "components": [
           {
             "name": "base",
@@ -19,9 +19,9 @@
             "internalType": "address"
           },
           {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
           }
         ]
       }
@@ -37,12 +37,25 @@
   },
   {
     "type": "function",
+    "name": "getManagedProxyImplementation",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "getProxyAddress",
     "inputs": [
       {
         "name": "args",
         "type": "tuple",
-        "internalType": "struct IOptionCSFactory.OptionCSArgs",
+        "internalType": "struct IOptionPSFactory.OptionPSArgs",
         "components": [
           {
             "name": "base",
@@ -55,9 +68,9 @@
             "internalType": "address"
           },
           {
-            "name": "oracleAdapter",
-            "type": "address",
-            "internalType": "address"
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
           }
         ]
       }
@@ -96,6 +109,32 @@
     "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "setManagedProxyImplementation",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "ManagedImplementationSet",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
     "type": "event",
     "name": "ProxyDeployed",
     "inputs": [
@@ -112,10 +151,10 @@
         "internalType": "address"
       },
       {
-        "name": "oracleAdapter",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
+        "name": "isCall",
+        "type": "bool",
+        "indexed": false,
+        "internalType": "bool"
       },
       {
         "name": "proxy",
@@ -128,7 +167,7 @@
   },
   {
     "type": "error",
-    "name": "OptionCSFactory__ProxyAlreadyDeployed",
+    "name": "OptionPSFactory__ProxyAlreadyDeployed",
     "inputs": [
       {
         "name": "proxy",
@@ -137,4 +176,4 @@
       }
     ]
   }
-]
+] as const;

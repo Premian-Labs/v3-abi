@@ -1,4 +1,4 @@
-[
+export const IERC20 = [
   {
     "type": "function",
     "name": "allowance",
@@ -182,4 +182,4 @@
     ],
     "anonymous": false
   }
-]
+] as const;

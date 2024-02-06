@@ -1,4 +1,4 @@
-[
+export const IVxPremia = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",
@@ -1452,4 +1452,4 @@
     "name": "VxPremia__NotEnoughVotingPower",
     "inputs": []
   }
-]
+] as const;

@@ -1,4 +1,4 @@
-[
+export const IVaultMining = [
   {
     "type": "function",
     "name": "addRewards",
@@ -543,4 +543,4 @@
       }
     ]
   }
-]
+] as const;

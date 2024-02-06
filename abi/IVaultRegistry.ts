@@ -1,4 +1,4 @@
-[
+export const IVaultRegistry = [
   {
     "type": "function",
     "name": "addSupportedTokenPairs",
@@ -810,4 +810,4 @@
     ],
     "anonymous": false
   }
-]
+] as const;

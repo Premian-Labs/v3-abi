@@ -1,4 +1,4 @@
-[
+export const IERC20Permit = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",
@@ -84,4 +84,4 @@
     "name": "ERC20Permit__InvalidSignature",
     "inputs": []
   }
-]
+] as const;

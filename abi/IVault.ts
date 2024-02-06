@@ -1,4 +1,4 @@
-[
+export const IVault = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",
@@ -1301,4 +1301,4 @@
     "name": "Vault__ZeroSize",
     "inputs": []
   }
-]
+] as const;

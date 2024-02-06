@@ -22,6 +22,12 @@ forge build --extra-output-files abi
 cd ..
 ts-node ./utils/copyAbi.ts
 
+# Generate the typechain files
+yarn codegen
+
+# Convert JSON abis to TS (For Viem types compatibility)
+ts-node ./utils/convertJsonToTs.ts
+
 # Copy the deployment files
 mkdir ./deployment
 cp -r ./temp/deployments/arbitrum/metadata.json ./deployment/arbitrum.json
@@ -41,9 +47,6 @@ echo "export const arbitrum = arbitrumMetadata as DeploymentMetadata;" >> ./depl
 echo "export const arbitrumGoerli = arbitrumGoerliMetadata as DeploymentMetadata;" >> ./deployment/index.ts
 echo "export const arbitrumSepolia = arbitrumSepoliaMetadata as DeploymentMetadata;" >> ./deployment/index.ts
 echo "export const arbitrumNova = arbitrumNovaMetadata as { core: { [key: string]: ContractDeploymentMetadata } };" >> ./deployment/index.ts
-
-# Generate the typechain files
-yarn codegen
 
 # Compile and generate build files
 tsc

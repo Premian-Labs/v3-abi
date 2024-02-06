@@ -1,4 +1,4 @@
-[
+export const IFeeConverter = [
   {
     "type": "function",
     "name": "convert",
@@ -172,4 +172,4 @@
     "name": "FeeConverter__TreasuryShareGreaterThanOne",
     "inputs": []
   }
-]
+] as const;

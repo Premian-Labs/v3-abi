@@ -1,4 +1,4 @@
-[
+export const IUserSettings = [
   {
     "type": "function",
     "name": "getActionAuthorization",
@@ -242,4 +242,4 @@
     "name": "UserSettings__InvalidArrayLength",
     "inputs": []
   }
-]
+] as const;

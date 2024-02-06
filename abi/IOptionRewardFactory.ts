@@ -1,4 +1,4 @@
-[
+export const IOptionRewardFactory = [
   {
     "type": "function",
     "name": "deployProxy",
@@ -353,4 +353,4 @@
       }
     ]
   }
-]
+] as const;

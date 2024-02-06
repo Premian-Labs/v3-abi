@@ -1,4 +1,4 @@
-[
+export const IReferral = [
   {
     "type": "function",
     "name": "claimRebate",
@@ -380,4 +380,4 @@
     "name": "Referral__NotAuthorized",
     "inputs": []
   }
-]
+] as const;

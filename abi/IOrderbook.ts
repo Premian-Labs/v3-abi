@@ -1,4 +1,4 @@
-[
+export const IOrderbook = [
   {
     "type": "function",
     "name": "cancelQuotesOB",
@@ -584,4 +584,4 @@
       }
     ]
   }
-]
+] as const;

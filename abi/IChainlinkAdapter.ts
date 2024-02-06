@@ -1,4 +1,4 @@
-[
+export const IChainlinkAdapter = [
   {
     "type": "function",
     "name": "batchRegisterFeedMappings",
@@ -486,4 +486,4 @@
     "name": "OracleAdapter__ZeroAddress",
     "inputs": []
   }
-]
+] as const;

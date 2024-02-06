@@ -1,4 +1,4 @@
-[
+export const IExchangeHelper = [
   {
     "type": "function",
     "name": "swapWithToken",
@@ -53,4 +53,4 @@
     ],
     "stateMutability": "nonpayable"
   }
-]
+] as const;

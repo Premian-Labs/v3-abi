@@ -1,4 +1,4 @@
-[
+export const IVolatilityOracle = [
   {
     "type": "function",
     "name": "formatParams",
@@ -311,4 +311,4 @@
     "name": "VolatilityOracle__TimeToMaturityIsZero",
     "inputs": []
   }
-]
+] as const;

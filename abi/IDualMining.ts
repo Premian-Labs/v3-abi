@@ -1,4 +1,4 @@
-[
+export const IDualMining = [
   {
     "type": "function",
     "name": "addRewards",
@@ -260,4 +260,4 @@
     "name": "DualMining__NotInitialized",
     "inputs": []
   }
-]
+] as const;
