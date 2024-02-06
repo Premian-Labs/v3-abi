@@ -1,4 +1,4 @@
-export const IVxPremia = [
+export const IVxPremia__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

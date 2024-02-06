@@ -1,4 +1,4 @@
-export const IOptionReward = [
+export const IOptionReward__abi = [
   {
     "type": "function",
     "name": "claimRewards",

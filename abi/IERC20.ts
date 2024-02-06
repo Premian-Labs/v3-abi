@@ -1,4 +1,4 @@
-export const IERC20 = [
+export const IERC20__abi = [
   {
     "type": "function",
     "name": "allowance",

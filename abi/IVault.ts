@@ -1,4 +1,4 @@
-export const IVault = [
+export const IVault__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

@@ -1,4 +1,4 @@
-export const IUnderwriterVault = [
+export const IUnderwriterVault__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

@@ -1,4 +1,4 @@
-export const IOptionPSFactory = [
+export const IOptionPSFactory__abi = [
   {
     "type": "function",
     "name": "deployProxy",

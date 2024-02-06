@@ -1,4 +1,4 @@
-export const OrderbookStream = [
+export const OrderbookStream__abi = [
   {
     "type": "function",
     "name": "add",

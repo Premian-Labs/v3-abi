@@ -1,4 +1,4 @@
-export const IReferral = [
+export const IReferral__abi = [
   {
     "type": "function",
     "name": "claimRebate",

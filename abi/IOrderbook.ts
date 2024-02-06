@@ -1,4 +1,4 @@
-export const IOrderbook = [
+export const IOrderbook__abi = [
   {
     "type": "function",
     "name": "cancelQuotesOB",

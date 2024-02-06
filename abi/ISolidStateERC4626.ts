@@ -1,4 +1,4 @@
-export const ISolidStateERC4626 = [
+export const ISolidStateERC4626__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

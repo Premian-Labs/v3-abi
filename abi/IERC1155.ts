@@ -1,4 +1,4 @@
-export const IERC1155 = [
+export const IERC1155__abi = [
   {
     "type": "function",
     "name": "balanceOf",

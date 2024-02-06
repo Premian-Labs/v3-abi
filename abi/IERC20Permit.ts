@@ -1,4 +1,4 @@
-export const IERC20Permit = [
+export const IERC20Permit__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

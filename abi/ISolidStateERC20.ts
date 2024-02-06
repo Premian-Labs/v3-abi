@@ -1,4 +1,4 @@
-export const ISolidStateERC20 = [
+export const ISolidStateERC20__abi = [
   {
     "type": "function",
     "name": "DOMAIN_SEPARATOR",

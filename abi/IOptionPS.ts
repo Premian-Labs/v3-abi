@@ -1,4 +1,4 @@
-export const IOptionPS = [
+export const IOptionPS__abi = [
   {
     "type": "function",
     "name": "accountsByToken",

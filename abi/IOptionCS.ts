@@ -1,4 +1,4 @@
-export const IOptionCS = [
+export const IOptionCS__abi = [
   {
     "type": "function",
     "name": "accountsByToken",

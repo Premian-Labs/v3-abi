@@ -1,4 +1,4 @@
-export const IOracleAdapter = [
+export const IOracleAdapter__abi = [
   {
     "type": "function",
     "name": "describePricingPath",

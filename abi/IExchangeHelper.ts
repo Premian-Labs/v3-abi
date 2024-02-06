@@ -1,4 +1,4 @@
-export const IExchangeHelper = [
+export const IExchangeHelper__abi = [
   {
     "type": "function",
     "name": "swapWithToken",

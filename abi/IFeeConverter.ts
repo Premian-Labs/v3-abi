@@ -1,4 +1,4 @@
-export const IFeeConverter = [
+export const IFeeConverter__abi = [
   {
     "type": "function",
     "name": "convert",

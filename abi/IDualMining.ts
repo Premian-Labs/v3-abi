@@ -1,4 +1,4 @@
-export const IDualMining = [
+export const IDualMining__abi = [
   {
     "type": "function",
     "name": "addRewards",

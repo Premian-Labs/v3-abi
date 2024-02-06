@@ -1,4 +1,4 @@
-export const IVaultRegistry = [
+export const IVaultRegistry__abi = [
   {
     "type": "function",
     "name": "addSupportedTokenPairs",

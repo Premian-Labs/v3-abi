@@ -1,4 +1,4 @@
-export const IChainlinkAdapter = [
+export const IChainlinkAdapter__abi = [
   {
     "type": "function",
     "name": "batchRegisterFeedMappings",

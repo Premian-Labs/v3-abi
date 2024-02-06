@@ -1,4 +1,4 @@
-export const IVolatilityOracle = [
+export const IVolatilityOracle__abi = [
   {
     "type": "function",
     "name": "formatParams",

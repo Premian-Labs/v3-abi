@@ -1,4 +1,4 @@
-export const IVaultMining = [
+export const IVaultMining__abi = [
   {
     "type": "function",
     "name": "addRewards",

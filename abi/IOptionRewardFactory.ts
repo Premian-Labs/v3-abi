@@ -1,4 +1,4 @@
-export const IOptionRewardFactory = [
+export const IOptionRewardFactory__abi = [
   {
     "type": "function",
     "name": "deployProxy",

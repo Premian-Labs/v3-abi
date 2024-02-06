@@ -9,7 +9,7 @@ for (const el of abiList) {
   const target = `./abi/${el}.ts`
   const content = fs.readFileSync(source);
 
-  fs.writeFileSync(target, `export const ${el} = ${content.toString()} as const;`);
+  fs.writeFileSync(target, `export const ${el}__abi = ${content.toString()} as const;`);
   fs.rmSync(source);
 
   data += `export * from "./${el}";\n`

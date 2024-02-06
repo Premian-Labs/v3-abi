@@ -1,4 +1,4 @@
-export const ISolidStateDiamond = [
+export const ISolidStateDiamond__abi = [
   {
     "type": "fallback",
     "stateMutability": "payable"

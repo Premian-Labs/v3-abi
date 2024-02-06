@@ -1,4 +1,4 @@
-export const IUserSettings = [
+export const IUserSettings__abi = [
   {
     "type": "function",
     "name": "getActionAuthorization",
