@@ -12,7 +12,7 @@ rm -rf ./dist
 rm -rf ./typechain
 
 # Clone the repo and install dependencies
-git clone -b master https://github.com/Premian-Labs/premia-v3-contracts-private.git ./temp
+git clone -b dev-decoupling https://github.com/Premian-Labs/premia-v3-contracts-private.git ./temp
 cd temp
 yarn install
 forge install

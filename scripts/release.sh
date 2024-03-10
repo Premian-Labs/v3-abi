@@ -8,3 +8,8 @@ set -e
 cp ./package.json ./dist/package.json
 cd ./dist
 yarn publish
+
+# Publish to npm with tag, run the following commands from terminal, directly
+#cp ./package.json ./dist/package.json
+#cd ./dist
+#npm publish --tag rc
