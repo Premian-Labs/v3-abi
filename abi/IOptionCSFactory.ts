@@ -122,9 +122,50 @@ export const IOptionCSFactory__abi = [
         "type": "address",
         "indexed": false,
         "internalType": "address"
+      },
+      {
+        "name": "basePath",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      },
+      {
+        "name": "basePathDecimals",
+        "type": "uint8[]",
+        "indexed": false,
+        "internalType": "uint8[]"
+      },
+      {
+        "name": "baseAdapterType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum IOracleAdapter.AdapterType"
+      },
+      {
+        "name": "quotePath",
+        "type": "address[]",
+        "indexed": false,
+        "internalType": "address[]"
+      },
+      {
+        "name": "quotePathDecimals",
+        "type": "uint8[]",
+        "indexed": false,
+        "internalType": "uint8[]"
+      },
+      {
+        "name": "quoteAdapterType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum IOracleAdapter.AdapterType"
       }
     ],
     "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "OptionCSFactory__IdenticalAddresses",
+    "inputs": []
   },
   {
     "type": "error",
@@ -136,5 +177,10 @@ export const IOptionCSFactory__abi = [
         "internalType": "address"
       }
     ]
+  },
+  {
+    "type": "error",
+    "name": "OptionCSFactory__ZeroAddress",
+    "inputs": []
   }
 ] as const;

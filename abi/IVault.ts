@@ -235,7 +235,12 @@ export const IVault__abi = [
     ],
     "outputs": [
       {
-        "name": "premium",
+        "name": "totalPremium",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "tradeFee",
         "type": "uint256",
         "internalType": "uint256"
       }
@@ -658,7 +663,18 @@ export const IVault__abi = [
         "internalType": "address"
       }
     ],
-    "outputs": [],
+    "outputs": [
+      {
+        "name": "totalPremium",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "tradeFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
     "stateMutability": "nonpayable"
   },
   {
@@ -889,7 +905,7 @@ export const IVault__abi = [
       {
         "name": "params",
         "type": "tuple",
-        "indexed": true,
+        "indexed": false,
         "internalType": "struct IOptionCSInternal.OptionParams",
         "components": [
           {
@@ -908,6 +924,18 @@ export const IVault__abi = [
             "internalType": "bool"
           }
         ]
+      },
+      {
+        "name": "option",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "exerciseValue",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "UD60x18"
       },
       {
         "name": "contractSize",
@@ -937,7 +965,7 @@ export const IVault__abi = [
       {
         "name": "params",
         "type": "tuple",
-        "indexed": true,
+        "indexed": false,
         "internalType": "struct IOptionCSInternal.OptionParams",
         "components": [
           {
@@ -958,6 +986,12 @@ export const IVault__abi = [
         ]
       },
       {
+        "name": "option",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
         "name": "contractSize",
         "type": "uint256",
         "indexed": false,
@@ -976,19 +1010,13 @@ export const IVault__abi = [
         "internalType": "UD60x18"
       },
       {
-        "name": "takerFee",
+        "name": "tradeFee",
         "type": "uint256",
         "indexed": false,
         "internalType": "UD60x18"
       },
       {
-        "name": "makerRebate",
-        "type": "uint256",
-        "indexed": false,
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "vaultFee",
+        "name": "spread",
         "type": "uint256",
         "indexed": false,
         "internalType": "UD60x18"

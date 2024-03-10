@@ -1,7 +1,20 @@
 export const IOrderbook__abi = [
   {
     "type": "function",
-    "name": "cancelQuotesOB",
+    "name": "cancelQuoteGroup",
+    "inputs": [
+      {
+        "name": "groupId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "cancelQuotes",
     "inputs": [
       {
         "name": "hashes",
@@ -14,12 +27,12 @@ export const IOrderbook__abi = [
   },
   {
     "type": "function",
-    "name": "fillQuoteOB",
+    "name": "fillMatchedQuote",
     "inputs": [
       {
-        "name": "quoteOB",
+        "name": "quoteTaker",
         "type": "tuple",
-        "internalType": "struct IOrderbook.QuoteOB",
+        "internalType": "struct IOrderbook.Quote",
         "components": [
           {
             "name": "base",
@@ -82,7 +95,331 @@ export const IOrderbook__abi = [
             "internalType": "uint256"
           },
           {
-            "name": "salt",
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "signatureUser",
+        "type": "tuple",
+        "internalType": "struct IOrderbook.Signature",
+        "components": [
+          {
+            "name": "r",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "yParityAndS",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      },
+      {
+        "name": "quotes",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Quote[]",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "signatures",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Signature[]",
+        "components": [
+          {
+            "name": "r",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "yParityAndS",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      },
+      {
+        "name": "gasRebate",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "filledQuoteAmounts",
+        "type": "uint256[]",
+        "internalType": "UD60x18[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "fillMultiQuotes",
+    "inputs": [
+      {
+        "name": "quotes",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Quote[]",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "signatures",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Signature[]",
+        "components": [
+          {
+            "name": "r",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "yParityAndS",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      },
+      {
+        "name": "premiumLimit",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "referrer",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "fillQuote",
+    "inputs": [
+      {
+        "name": "quote",
+        "type": "tuple",
+        "internalType": "struct IOrderbook.Quote",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
             "type": "uint256",
             "internalType": "uint256"
           },
@@ -126,6 +463,11 @@ export const IOrderbook__abi = [
         "name": "premiumTaker",
         "type": "uint256",
         "internalType": "uint256"
+      },
+      {
+        "name": "premiumMaker",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "nonpayable"
@@ -151,7 +493,7 @@ export const IOrderbook__abi = [
   },
   {
     "type": "function",
-    "name": "getQuoteOBFilledAmount",
+    "name": "getQuoteFilledAmount",
     "inputs": [
       {
         "name": "provider",
@@ -159,7 +501,7 @@ export const IOrderbook__abi = [
         "internalType": "address"
       },
       {
-        "name": "quoteOBHash",
+        "name": "quoteHash",
         "type": "bytes32",
         "internalType": "bytes32"
       }
@@ -175,24 +517,12 @@ export const IOrderbook__abi = [
   },
   {
     "type": "function",
-    "name": "incrementNonce",
-    "inputs": [],
-    "outputs": [],
-    "stateMutability": "nonpayable"
-  },
-  {
-    "type": "function",
-    "name": "isQuoteOBValid",
+    "name": "getTakerPremiumLimit",
     "inputs": [
       {
-        "name": "user",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "quoteOB",
+        "name": "quote",
         "type": "tuple",
-        "internalType": "struct IOrderbook.QuoteOB",
+        "internalType": "struct IOrderbook.Quote",
         "components": [
           {
             "name": "base",
@@ -255,7 +585,144 @@ export const IOrderbook__abi = [
             "internalType": "uint256"
           },
           {
-            "name": "salt",
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "taker",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "incrementNonce",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "isQuoteGroupCanceled",
+    "inputs": [
+      {
+        "name": "provider",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "groupId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isQuoteValid",
+    "inputs": [
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "quote",
+        "type": "tuple",
+        "internalType": "struct IOrderbook.Quote",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
             "type": "uint256",
             "internalType": "uint256"
           },
@@ -298,57 +765,24 @@ export const IOrderbook__abi = [
       {
         "name": "",
         "type": "uint8",
-        "internalType": "enum IOrderbook.InvalidQuoteOBError"
+        "internalType": "enum IOrderbook.InvalidQuoteError"
       }
     ],
     "stateMutability": "view"
   },
   {
-    "type": "event",
-    "name": "CancelQuoteOB",
+    "type": "function",
+    "name": "isQuotesSizeFillable",
     "inputs": [
-      {
-        "name": "provider",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "quoteOBHash",
-        "type": "bytes32",
-        "indexed": false,
-        "internalType": "bytes32"
-      }
-    ],
-    "anonymous": false
-  },
-  {
-    "type": "event",
-    "name": "FillQuoteOB",
-    "inputs": [
-      {
-        "name": "quoteOBHash",
-        "type": "bytes32",
-        "indexed": true,
-        "internalType": "bytes32"
-      },
       {
         "name": "user",
         "type": "address",
-        "indexed": true,
         "internalType": "address"
       },
       {
-        "name": "provider",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
-      },
-      {
-        "name": "quoteOB",
-        "type": "tuple",
-        "indexed": false,
-        "internalType": "struct IOrderbook.QuoteOB",
+        "name": "quotes",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Quote[]",
         "components": [
           {
             "name": "base",
@@ -411,7 +845,285 @@ export const IOrderbook__abi = [
             "internalType": "uint256"
           },
           {
-            "name": "salt",
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "signatures",
+        "type": "tuple[]",
+        "internalType": "struct IOrderbook.Signature[]",
+        "components": [
+          {
+            "name": "r",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "yParityAndS",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "isFilled",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "totalPremium",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "CancelQuote",
+    "inputs": [
+      {
+        "name": "provider",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "quoteHash",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "CancelQuoteGroup",
+    "inputs": [
+      {
+        "name": "provider",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "nonce",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "groupId",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "FillMatchedQuote",
+    "inputs": [
+      {
+        "name": "quoteTakerHash",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "quoteTaker",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOrderbook.Quote",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      },
+      {
+        "name": "contractSize",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "UD60x18"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "FillQuote",
+    "inputs": [
+      {
+        "name": "quoteHash",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "provider",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "quote",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOrderbook.Quote",
+        "components": [
+          {
+            "name": "base",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "quote",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "oracleAdapter",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "provider",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "taker",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "price",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "size",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "isBuy",
+            "type": "bool",
+            "internalType": "bool"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "groupId",
             "type": "uint256",
             "internalType": "uint256"
           },
@@ -429,22 +1141,28 @@ export const IOrderbook__abi = [
         "internalType": "UD60x18"
       },
       {
-        "name": "premium",
+        "name": "premiumTaker",
         "type": "uint256",
         "indexed": false,
         "internalType": "UD60x18"
       },
       {
-        "name": "protocolFee",
+        "name": "premiumMaker",
         "type": "uint256",
         "indexed": false,
         "internalType": "UD60x18"
       },
       {
-        "name": "totalReferralRebate",
+        "name": "totalTradeFee",
         "type": "uint256",
         "indexed": false,
         "internalType": "UD60x18"
+      },
+      {
+        "name": "fillType",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum IOrderbook.FillType"
       }
     ],
     "anonymous": false
@@ -486,12 +1204,33 @@ export const IOrderbook__abi = [
   },
   {
     "type": "error",
-    "name": "Orderbook__InvalidQuoteOBSignature",
+    "name": "Orderbook__ArrayLengthMismatch",
     "inputs": []
   },
   {
     "type": "error",
-    "name": "Orderbook__InvalidQuoteOBTaker",
+    "name": "Orderbook__GasRebateExceedsPremiumSpread",
+    "inputs": [
+      {
+        "name": "gasRebate",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "premiumSpread",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__InvalidQuoteSignature",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__InvalidQuoteTaker",
     "inputs": []
   },
   {
@@ -528,28 +1267,38 @@ export const IOrderbook__abi = [
   },
   {
     "type": "error",
-    "name": "Orderbook__OutOfBoundsPrice",
+    "name": "Orderbook__QuoteAskExceedsBid",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__QuoteCanceled",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__QuoteDuplicateHash",
     "inputs": [
       {
-        "name": "price",
-        "type": "uint256",
-        "internalType": "UD60x18"
+        "name": "quoteHash",
+        "type": "bytes32",
+        "internalType": "bytes32"
       }
     ]
   },
   {
     "type": "error",
-    "name": "Orderbook__QuoteOBCancelled",
+    "name": "Orderbook__QuoteExpired",
     "inputs": []
   },
   {
     "type": "error",
-    "name": "Orderbook__QuoteOBExpired",
+    "name": "Orderbook__QuoteGroupCanceled",
     "inputs": []
   },
   {
     "type": "error",
-    "name": "Orderbook__QuoteOBInvalidNonce",
+    "name": "Orderbook__QuoteInvalidNonce",
     "inputs": [
       {
         "name": "quoteNonce",
@@ -565,7 +1314,12 @@ export const IOrderbook__abi = [
   },
   {
     "type": "error",
-    "name": "Orderbook__QuoteOBOverfilled",
+    "name": "Orderbook__QuoteNotBestExecution",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__QuoteOverfilled",
     "inputs": [
       {
         "name": "filledAmount",
@@ -578,9 +1332,56 @@ export const IOrderbook__abi = [
         "internalType": "UD60x18"
       },
       {
-        "name": "quoteOBSize",
+        "name": "quoteSize",
         "type": "uint256",
         "internalType": "UD60x18"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__QuoteTradeSideMismatch",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__QuotesAreDissimilar",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__SizeNotFilled",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__TotalTakerPremiumAboveLimit",
+    "inputs": [
+      {
+        "name": "totalTakerPremium",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "premiumLimit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "Orderbook__TotalTakerPremiumBelowLimit",
+    "inputs": [
+      {
+        "name": "totalTakerPremium",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "premiumLimit",
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ]
   }

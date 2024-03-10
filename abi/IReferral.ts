@@ -27,7 +27,7 @@ export const IReferral__abi = [
         "internalType": "address"
       },
       {
-        "name": "tradingFee",
+        "name": "fee",
         "type": "uint256",
         "internalType": "UD60x18"
       }

@@ -17,8 +17,8 @@ export const IOracleAdapter__abi = [
       },
       {
         "name": "path",
-        "type": "address[][]",
-        "internalType": "address[][]"
+        "type": "address[]",
+        "internalType": "address[]"
       },
       {
         "name": "decimals",

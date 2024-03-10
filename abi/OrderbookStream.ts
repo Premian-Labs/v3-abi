@@ -4,14 +4,14 @@ export const OrderbookStream__abi = [
     "name": "add",
     "inputs": [
       {
-        "name": "quotesOBWithSignature",
+        "name": "quotesWithSignature",
         "type": "tuple[]",
-        "internalType": "struct OrderbookStream.QuoteOBWithSignature[]",
+        "internalType": "struct OrderbookStream.QuoteWithSignature[]",
         "components": [
           {
-            "name": "quoteOB",
+            "name": "quote",
             "type": "tuple",
-            "internalType": "struct IOrderbook.QuoteOB",
+            "internalType": "struct IOrderbook.Quote",
             "components": [
               {
                 "name": "base",
@@ -74,7 +74,7 @@ export const OrderbookStream__abi = [
                 "internalType": "uint256"
               },
               {
-                "name": "salt",
+                "name": "groupId",
                 "type": "uint256",
                 "internalType": "uint256"
               },
@@ -136,7 +136,7 @@ export const OrderbookStream__abi = [
         ]
       },
       {
-        "name": "optionParams",
+        "name": "params",
         "type": "tuple",
         "indexed": true,
         "internalType": "struct IOptionCSInternal.OptionParams",
@@ -159,10 +159,10 @@ export const OrderbookStream__abi = [
         ]
       },
       {
-        "name": "quoteOB",
+        "name": "quote",
         "type": "tuple",
         "indexed": false,
-        "internalType": "struct IOrderbook.QuoteOB",
+        "internalType": "struct IOrderbook.Quote",
         "components": [
           {
             "name": "base",
@@ -225,7 +225,7 @@ export const OrderbookStream__abi = [
             "internalType": "uint256"
           },
           {
-            "name": "salt",
+            "name": "groupId",
             "type": "uint256",
             "internalType": "uint256"
           },

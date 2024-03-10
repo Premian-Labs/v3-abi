@@ -143,6 +143,74 @@ export const IOptionCS__abi = [
   },
   {
     "type": "function",
+    "name": "calculateBaseFee",
+    "inputs": [
+      {
+        "name": "strike",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "isCall",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "baseFee",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "calculateBaseFeeUD60x18",
+    "inputs": [
+      {
+        "name": "strike",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "isCall",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "size",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "baseFee",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
     "name": "calculateExerciseValue",
     "inputs": [
       {
@@ -500,6 +568,34 @@ export const IOptionCS__abi = [
       }
     ],
     "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "handleReferralAndProtocolFee",
+    "inputs": [
+      {
+        "name": "fee",
+        "type": "uint256",
+        "internalType": "UD60x18"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "referrer",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "isCall",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
     "type": "function",
@@ -871,55 +967,6 @@ export const IOptionCS__abi = [
   },
   {
     "type": "function",
-    "name": "takerFee",
-    "inputs": [
-      {
-        "name": "strike",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "isCall",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "taker",
-        "type": "address",
-        "internalType": "address"
-      },
-      {
-        "name": "size",
-        "type": "uint256",
-        "internalType": "UD60x18"
-      },
-      {
-        "name": "premium",
-        "type": "uint256",
-        "internalType": "uint256"
-      },
-      {
-        "name": "isPremiumNormalized",
-        "type": "bool",
-        "internalType": "bool"
-      },
-      {
-        "name": "isOrderbook",
-        "type": "bool",
-        "internalType": "bool"
-      }
-    ],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
     "name": "tokensByAccount",
     "inputs": [
       {
@@ -1174,7 +1221,7 @@ export const IOptionCS__abi = [
   },
   {
     "type": "function",
-    "name": "writeFromNoFee",
+    "name": "writeFromNoBaseFee",
     "inputs": [
       {
         "name": "params",
@@ -1271,6 +1318,29 @@ export const IOptionCS__abi = [
         "type": "address",
         "indexed": true,
         "internalType": "address"
+      },
+      {
+        "name": "params",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
       },
       {
         "name": "contractSize",
@@ -1377,6 +1447,29 @@ export const IOptionCS__abi = [
         "internalType": "address"
       },
       {
+        "name": "params",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      },
+      {
         "name": "contractSize",
         "type": "uint256",
         "indexed": false,
@@ -1426,6 +1519,12 @@ export const IOptionCS__abi = [
         "internalType": "address"
       },
       {
+        "name": "token",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
         "name": "amount",
         "type": "uint256",
         "indexed": false,
@@ -1455,6 +1554,29 @@ export const IOptionCS__abi = [
         "type": "address",
         "indexed": true,
         "internalType": "address"
+      },
+      {
+        "name": "params",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
       },
       {
         "name": "contractSize",
@@ -1587,6 +1709,12 @@ export const IOptionCS__abi = [
     "name": "WriteFrom",
     "inputs": [
       {
+        "name": "taker",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
         "name": "underwriter",
         "type": "address",
         "indexed": true,
@@ -1595,14 +1723,31 @@ export const IOptionCS__abi = [
       {
         "name": "longReceiver",
         "type": "address",
-        "indexed": true,
+        "indexed": false,
         "internalType": "address"
       },
       {
-        "name": "taker",
-        "type": "address",
-        "indexed": true,
-        "internalType": "address"
+        "name": "params",
+        "type": "tuple",
+        "indexed": false,
+        "internalType": "struct IOptionCSInternal.OptionParams",
+        "components": [
+          {
+            "name": "strike",
+            "type": "uint256",
+            "internalType": "UD60x18"
+          },
+          {
+            "name": "maturity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isCall",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
       },
       {
         "name": "contractSize",
@@ -1746,6 +1891,11 @@ export const IOptionCS__abi = [
   },
   {
     "type": "error",
+    "name": "OptionCS__DiscountExceedsMax",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "OptionCS__FlashLoanCallbackFailed",
     "inputs": []
   },
@@ -1762,6 +1912,11 @@ export const IOptionCS__abi = [
   {
     "type": "error",
     "name": "OptionCS__InsufficientFunds",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "OptionCS__InvalidCategory",
     "inputs": []
   },
   {
@@ -1861,6 +2016,11 @@ export const IOptionCS__abi = [
   {
     "type": "error",
     "name": "OptionCS__RatiosMustNotEqualZero",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "OptionCS__ReleasedCollateralExceedsFullSize",
     "inputs": []
   },
   {

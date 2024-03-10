@@ -1,3 +1,5 @@
+export type Tokens = { [symbol: string]: string };
+
 export interface DeploymentMetadata {
   addresses: {
     treasury: string;
@@ -5,8 +7,7 @@ export interface DeploymentMetadata {
     dao: string;
     lzEndpoint: string;
   };
-  tokens: { [symbol: string]: string };
-
+  tokens: Tokens;
   feeConverter: {
     main: ContractDeploymentMetadata;
     insuranceFund: ContractDeploymentMetadata;
@@ -40,6 +41,7 @@ export enum ContractKey {
   VolatilityOracleImplementation = 'VolatilityOracleImplementation',
   VolatilityOracleProxy = 'VolatilityOracleProxy',
   OptionMathExternal = 'OptionMathExternal',
+  UnderwriterVaultExternal = 'UnderwriterVaultExternal',
   UnderwriterVaultImplementation = 'UnderwriterVaultImplementation',
   VaultMiningImplementation = 'VaultMiningImplementation',
   VaultMiningProxy = 'VaultMiningProxy',

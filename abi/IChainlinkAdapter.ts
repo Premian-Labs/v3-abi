@@ -47,8 +47,8 @@ export const IChainlinkAdapter__abi = [
       },
       {
         "name": "path",
-        "type": "address[][]",
-        "internalType": "address[][]"
+        "type": "address[]",
+        "internalType": "address[]"
       },
       {
         "name": "decimals",
@@ -341,6 +341,11 @@ export const IChainlinkAdapter__abi = [
         "internalType": "address"
       }
     ]
+  },
+  {
+    "type": "error",
+    "name": "ChainlinkAdapter__InvalidPricingPath",
+    "inputs": []
   },
   {
     "type": "error",

@@ -232,9 +232,9 @@ export const IOptionRewardFactory__abi = [
       },
       {
         "name": "basePath",
-        "type": "address[][]",
+        "type": "address[]",
         "indexed": false,
-        "internalType": "address[][]"
+        "internalType": "address[]"
       },
       {
         "name": "basePathDecimals",
@@ -250,9 +250,9 @@ export const IOptionRewardFactory__abi = [
       },
       {
         "name": "quotePath",
-        "type": "address[][]",
+        "type": "address[]",
         "indexed": false,
-        "internalType": "address[][]"
+        "internalType": "address[]"
       },
       {
         "name": "quotePathDecimals",

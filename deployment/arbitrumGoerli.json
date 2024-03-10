@@ -295,6 +295,16 @@
       "timestamp": 0,
       "owner": ""
     },
+    "UnderwriterVaultExternal": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
     "UnderwriterVaultImplementation": {
       "address": "0x1E098cfB5963b26024aF37F5728bAC9D79741424",
       "block": 56755912,
