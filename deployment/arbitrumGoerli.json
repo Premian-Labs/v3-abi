@@ -543,6 +543,26 @@
       "block": 0,
       "timestamp": 0,
       "owner": ""
+    },
+    "OrderbookStreamImplementation": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
+    },
+    "OrderbookStreamProxy": {
+      "address": "",
+      "contractType": "",
+      "deploymentArgs": [],
+      "commitHash": "",
+      "txHash": "",
+      "block": 0,
+      "timestamp": 0,
+      "owner": ""
     }
   },
   "feeConverter": {
