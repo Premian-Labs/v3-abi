@@ -2,6 +2,7 @@
 export * from "./IChainlinkAdapter";
 export * from "./IDualMining";
 export * from "./IERC20";
+export * from "./IERC20Router";
 export * from "./IERC20Permit";
 export * from "./IERC1155";
 export * from "./IERC4626";

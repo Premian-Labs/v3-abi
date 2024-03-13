@@ -2,6 +2,7 @@ export const abiList = [
   "IChainlinkAdapter",
   "IDualMining",
   "IERC20",
+  "IERC20Router",
   "IERC20Permit",
   "IERC1155",
   "IERC4626",
