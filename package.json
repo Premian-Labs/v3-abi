@@ -3,7 +3,7 @@
   "description": "Contract deployment metadata, and ABIs for Premia v3 contracts. Also includes Typechain classes with ethers-v6 target.",
   "main": "index.js",
   "types": "index.d.ts",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "license": "LGPL-3.0-or-later",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "typechain": "^8.3.1",
     "typescript": "^5.2.2"
   },
-  "dependencies": {
-    "ethers": "^6.8.1"
+  "peerDependencies": {
+      "ethers": ">=6 <7"
   }
 }
